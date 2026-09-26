@@ -7,13 +7,7 @@ import { Droplet, Phone, Utensils, Wifi, Wind } from 'lucide-react'
 export default function GuestInfo() {
   const { t } = useLanguage()
   const amenities = [
-    {
-      icon: Wifi,
-      title: t('freeWiFi'),
-      description: t('highSpeedInternet'),
-      network: 'Riadnila',
-      password: 'Nila1471',
-    },
+    { icon: Wifi, title: t('freeWiFi'), description: t('highSpeedInternet') },
     { icon: Utensils, title: t('restaurant'), description: t('onSiteDining') },
     { icon: Droplet, title: t('hotWater'), description: t('hotWaterSupply') },
     { icon: Wind, title: t('airConditioning'), description: t('climateControl') },
@@ -44,16 +38,6 @@ export default function GuestInfo() {
                   <div>
                     <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
                     <p className="text-xs text-muted-foreground">{amenity.description}</p>
-                    {amenity.network && (
-                      <div className="mt-2 text-xs space-y-1">
-                        <p className="text-ink/70">
-                          <span className="font-semibold">{t('network')}:</span> {amenity.network}
-                        </p>
-                        <p className="text-ink/70">
-                          <span className="font-semibold">{t('password')}:</span> {amenity.password}
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
