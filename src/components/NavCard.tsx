@@ -5,8 +5,8 @@ export default function NavCard({ image, title, kicker, to, href, disabled, clas
   const content = (
     <>
       <img src={image} alt={title} />
-      <div className="relative z-10 flex items-center justify-between p-5 h-full">
-        <div className="text-left">
+      <div className="relative z-10 flex items-center justify-center md:justify-between p-5 h-full">
+        <div className="text-center md:text-left">
           <p className="text-xs font-medium uppercase tracking-wider text-white/70 mb-1">{kicker}</p>
           <h3 className="serif text-2xl font-medium text-white">{title}</h3>
         </div>
