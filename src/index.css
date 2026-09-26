@@ -1,0 +1,195 @@
+@import 'tailwindcss';
+
+:root {
+  --terracotta: oklch(0.55 0.18 30);
+  --terracotta-deep: oklch(0.45 0.15 30);
+  --sand: oklch(0.93 0.04 80);
+  --gold: oklch(0.62 0.15 60);
+  --gold-soft: oklch(0.68 0.12 65);
+  --teal: oklch(0.45 0.12 200);
+  --ink: oklch(0.24 0.02 30);
+  --cream: oklch(0.98 0.01 80);
+}
+
+@theme inline {
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-teal: var(--teal);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+
+  --color-background: var(--sand);
+  --color-foreground: var(--ink);
+  --color-primary: var(--teal);
+  --color-primary-foreground: var(--cream);
+  --color-muted: oklch(0.52 0.05 50);
+  --color-muted-foreground: oklch(0.65 0.05 50);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-border: oklch(0.88 0.02 80);
+  --color-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  [type='button']:not(:disabled),
+  [type='submit']:not(:disabled),
+  [type='reset']:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .nav-card {
+    @apply relative min-h-32 rounded-2xl overflow-hidden shadow-lg border border-white/20 transition-all duration-300 ease-out text-left w-full isolate;
+  }
+
+  .nav-card:hover {
+    @apply shadow-xl;
+  }
+
+  .nav-card:focus-visible {
+    @apply outline-4 outline-offset-2;
+    outline-color: var(--gold);
+  }
+
+  .nav-card img {
+    @apply absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out;
+    z-index: 0;
+  }
+
+  .nav-card:hover img {
+    @apply scale-105;
+  }
+
+  .nav-card::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(15, 10, 8, 0.85) 0%, rgba(15, 10, 8, 0.65) 55%, rgba(15, 10, 8, 0.45) 100%);
+  }
+
+  .hero-section {
+    @apply relative;
+    min-height: 0;
+  }
+
+  .section-card {
+    @apply bg-white/80 border rounded-2xl p-4 shadow-md;
+    border-color: rgba(200, 154, 90, 0.2);
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 rounded-full text-sm font-semibold transition-all duration-200;
+  }
+
+  .cta-button:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  .cta-button:active {
+    @apply scale-95;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+  }
+
+  .mini-divider {
+    @apply w-12 h-px my-3;
+    background: var(--gold);
+  }
+
+  .menu-section {
+    @apply space-y-4;
+  }
+
+  .menu-item {
+    @apply py-4;
+    border-bottom: 1px solid rgba(141, 77, 63, 0.1);
+  }
+
+  .menu-item:last-child {
+    @apply border-b-0;
+  }
+
+  .dish-line {
+    @apply flex items-start justify-between gap-3;
+  }
+
+  .dish-name {
+    @apply flex-1 font-semibold;
+    color: oklch(0.35 0.05 30);
+  }
+
+  .dish-price {
+    @apply whitespace-nowrap text-right font-semibold;
+    color: var(--terracotta);
+  }
+
+  .dish-desc {
+    @apply text-sm mt-1 text-muted-foreground;
+    line-height: 1.5;
+  }
+
+  .section-symbol {
+    @apply w-7 h-7 rounded-full flex items-center justify-center text-sm mb-2;
+    background-color: rgba(36, 95, 98, 0.1);
+    color: oklch(0.45 0.12 200);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 0;
+    max-height: none;
+  }
+
+  .min-h-screen.bg-sand > section:not(.hero-section) {
+    width: min(100%, 1180px);
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  .min-h-screen.bg-sand > section:not(.hero-section) > .space-y-4:has(.nav-card) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .min-h-screen.bg-sand > section:not(.hero-section) > .space-y-4:has(.nav-card) > * {
+    margin-top: 0;
+  }
+
+  .nav-card {
+    min-height: 10rem;
+  }
+}
