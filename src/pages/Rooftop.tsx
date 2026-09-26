@@ -1,8 +1,8 @@
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
-import { useLanguage } from '@/utils/i18n'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import { rooftopMenuSections } from '@/utils'
+import { useLanguage } from '@/utils/i18n'
 
 export default function Rooftop() {
   const { t } = useLanguage()
@@ -30,8 +30,9 @@ export default function Rooftop() {
           {menuSections.map((section, idx) => (
             <div key={idx} className="section-card">
               <div className="mb-4">
-                <div className="section-symbol">{section.symbol}</div>
-                <p className="eyebrow mb-2">{section.kicker}</p>
+                <p className="eyebrow mb-2">
+                  {section.symbol} {section.kicker}
+                </p>
                 <h3 className="serif text-2xl font-medium text-terracotta-deep">{section.title}</h3>
               </div>
 

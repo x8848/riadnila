@@ -38,7 +38,7 @@ export const rooftopMenuSections: MenuSection[] = [
   {
     title: 'Desserts & Sweet Endings',
     kicker: 'Sweet Indulgence',
-    symbol: '🍰',
+    symbol: '✦',
     items: [
       {
         name: 'Gourmet Caramel Flan',
@@ -73,7 +73,7 @@ export const rooftopMenuSections: MenuSection[] = [
   {
     title: 'Hot Drinks',
     kicker: 'Warm Ritual',
-    symbol: '☕',
+    symbol: '✦',
     items: [
       {
         name: 'Moroccan Mint Tea (Premium Ritual)',
@@ -107,7 +107,7 @@ export const rooftopMenuSections: MenuSection[] = [
   {
     title: 'Cold Drinks, Juices & Signature Smoothies',
     kicker: 'Cool & Bright',
-    symbol: '🧊',
+    symbol: '✦',
     items: [
       {
         name: 'Freshly Squeezed Orange Juice',

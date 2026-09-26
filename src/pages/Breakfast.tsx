@@ -20,7 +20,6 @@ export default function Breakfast() {
 
         {/* Breakfast Menu */}
         <div className="section-card mb-6">
-          <div className="section-symbol">☀️</div>
           <h3 className="serif text-2xl font-medium text-terracotta-deep mb-4">{t('breakfastMenu')}</h3>
 
           {/* Drink Choice */}
