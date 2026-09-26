@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
 import { treatments } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
@@ -75,21 +76,21 @@ export default function Spa() {
           </h3>
           <div className="space-y-3 text-sm">
             <div className="flex gap-3">
-              <Clock className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+              <Clock className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-ink">Hours</p>
                 <p className="text-muted-foreground">Daily 9:00 AM - 10:00 PM</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <Users className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+              <Users className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-ink">Advance Booking</p>
                 <p className="text-muted-foreground">Minimum 2 hours in advance required</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <Droplet className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+              <Droplet className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-ink">Natural Products</p>
                 <p className="text-muted-foreground">100% organic and locally sourced</p>
@@ -104,17 +105,10 @@ export default function Spa() {
             {t('spaBookingNote') ||
               'Book your spa treatment in advance to secure your preferred time slot. Contact us via WhatsApp to make a reservation.'}
           </p>
-          <a
+          <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20book%20a%20spa%20treatment."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button w-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center gap-2 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.503-2.37 1.236-3.356 2.241C3.060 10.378 2.275 11.950 2.275 13.607c0 1.052.215 2.074.636 3.028L2.581 22l3.507-1.114c.882.537 1.882.817 2.922.817h.001c5.514 0 10-4.486 10-10s-4.486-10-10-10z" />
-            </svg>
-            {t('bookNow') || 'Book Now via WhatsApp'}
-          </a>
+            label={t('bookNow')}
+          />
         </div>
       </section>
 

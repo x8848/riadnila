@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
 import { useLanguage } from '@/utils/i18n'
 import { BookOpen, Camera, Compass, MapPin, ShoppingBag, Users } from 'lucide-react'
@@ -68,7 +69,7 @@ export default function Services() {
           {services.map((service, idx) => (
             <div key={idx} className="section-card">
               <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0 text-teal">
+                <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                   {service.icon}
                 </div>
                 <div className="flex-1">
@@ -121,17 +122,10 @@ export default function Services() {
           <p className="text-sm text-muted-foreground mb-4">
             {t('contactConcierge') || 'Contact our concierge team to arrange any service or experience you desire.'}
           </p>
-          <a
+          <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20inquire%20about%20services."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button w-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center gap-2 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.503-2.37 1.236-3.356 2.241C3.060 10.378 2.275 11.950 2.275 13.607c0 1.052.215 2.074.636 3.028L2.581 22l3.507-1.114c.882.537 1.882.817 2.922.817h.001c5.514 0 10-4.486 10-10s-4.486-10-10-10z" />
-            </svg>
-            {t('contactUs') || 'Contact Us via WhatsApp'}
-          </a>
+            label={t('contactUs')}
+          />
         </div>
       </section>
 

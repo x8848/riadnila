@@ -1,7 +1,8 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import { useLanguage } from '@/utils/i18n'
-import { Droplet, MapPin, Phone, Utensils, Wifi, Wind } from 'lucide-react'
+import { Droplet, Phone, Utensils, Wifi, Wind } from 'lucide-react'
 
 export default function GuestInfo() {
   const { t } = useLanguage()
@@ -37,8 +38,8 @@ export default function GuestInfo() {
             return (
               <div key={idx} className="section-card">
                 <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-teal" />
+                  <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5 text-olive" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
@@ -63,7 +64,7 @@ export default function GuestInfo() {
         {/* Check-in & Check-out */}
         <div className="section-card mb-6">
           <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-teal flex-shrink-0">✅</div>
+            <div className="w-6 h-6 text-olive flex-shrink-0">✅</div>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('checkInCheckOut')}</h3>
           </div>
           <div className="space-y-3 text-sm ml-9">
@@ -84,7 +85,7 @@ export default function GuestInfo() {
         {/* House Rules & Policies */}
         <div className="section-card mb-6">
           <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-teal flex-shrink-0">📋</div>
+            <div className="w-6 h-6 text-olive flex-shrink-0">📋</div>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('houseRules')}</h3>
           </div>
           <div className="space-y-2 text-sm ml-9">
@@ -98,7 +99,7 @@ export default function GuestInfo() {
         {/* Services & Amenities */}
         <div className="section-card mb-6">
           <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-teal flex-shrink-0">🛎️</div>
+            <div className="w-6 h-6 text-olive flex-shrink-0">🛎️</div>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('servicesAmenities')}</h3>
           </div>
           <div className="space-y-4 ml-9">
@@ -148,7 +149,7 @@ export default function GuestInfo() {
         {/* Local Tips & Area Info */}
         <div className="section-card mb-6">
           <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-teal flex-shrink-0">📍</div>
+            <div className="w-6 h-6 text-olive flex-shrink-0">📍</div>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('localTips')}</h3>
           </div>
           <div className="space-y-2 text-sm ml-9">
@@ -163,7 +164,7 @@ export default function GuestInfo() {
         {/* Housekeeping Note */}
         <div className="section-card mb-6">
           <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-teal flex-shrink-0">🛏️</div>
+            <div className="w-6 h-6 text-olive flex-shrink-0">🛏️</div>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('housekeeping')}</h3>
           </div>
           <div className="space-y-3 text-sm ml-9">
@@ -183,30 +184,18 @@ export default function GuestInfo() {
         {/* Contact Information */}
         <div className="section-card">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('contactUs')}</h3>
-          <div className="space-y-3">
-            <a
-              href="tel:+212662134431"
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors"
-            >
-              <Phone className="w-5 h-5 text-teal" />
-              <div>
-                <p className="text-xs text-muted-foreground">Phone</p>
-                <p className="font-semibold text-ink">+212 662 134 431</p>
-              </div>
-            </a>
-            <a
-              href="https://wa.me/212662134431"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors"
-            >
-              <MapPin className="w-5 h-5 text-teal" />
-              <div>
-                <p className="text-xs text-muted-foreground">WhatsApp</p>
-                <p className="font-semibold text-ink">Message us anytime</p>
-              </div>
-            </a>
-          </div>
+          <a
+            href="tel:+212662134431"
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors mb-3"
+          >
+            <Phone className="w-5 h-5 text-olive" />
+            <div>
+              <p className="text-xs text-muted-foreground">Phone</p>
+              <p className="font-semibold text-ink">+212 662 134 431</p>
+            </div>
+          </a>
+          <p className="text-sm text-ink/80 mb-4">{t('contactConcierge')}</p>
+          <WhatsAppButton href="https://wa.me/212662134431" label={t('contactUs')} />
         </div>
       </section>
 

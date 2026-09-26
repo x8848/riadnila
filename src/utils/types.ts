@@ -65,3 +65,13 @@ export interface RestaurantMenuItem {
   image: string
   disabled: boolean
 }
+
+export interface NavCardProps {
+  image: string
+  title: string
+  kicker: string
+  to?: string
+  href?: string
+  disabled?: boolean
+  className?: string
+}

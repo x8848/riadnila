@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
 import { useLanguage } from '@/utils/i18n'
 import { Heart, Home, Users } from 'lucide-react'
@@ -36,7 +37,7 @@ export default function About() {
         <div className="space-y-4 mb-8">
           <div className="section-card">
             <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0 text-teal">
+              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Heart className="w-6 h-6" />
               </div>
               <div>
@@ -51,7 +52,7 @@ export default function About() {
 
           <div className="section-card">
             <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0 text-teal">
+              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Home className="w-6 h-6" />
               </div>
               <div>
@@ -66,7 +67,7 @@ export default function About() {
 
           <div className="section-card">
             <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0 text-teal">
+              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Users className="w-6 h-6" />
               </div>
               <div>
@@ -148,14 +149,10 @@ export default function About() {
           <p className="text-sm text-muted-foreground mb-4">
             {t('haveQuestions') || "Have questions or ready to book your stay? We'd love to hear from you."}
           </p>
-          <a
+          <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20have%20a%20question%20about%20your%20riad."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button w-full bg-[#25D366] hover:bg-[#20ba5a] text-white"
-          >
-            {t('contactUs') || 'Contact Us'}
-          </a>
+            label={t('contactUs')}
+          />
         </div>
       </section>
 

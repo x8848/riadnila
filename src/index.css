@@ -101,8 +101,9 @@
   }
 
   .section-card {
-    @apply bg-white/80 border rounded-2xl p-4 shadow-md;
-    border-color: rgba(200, 154, 90, 0.2);
+    background: #f7f3ec;
+    @apply border rounded-2xl p-4 shadow-sm;
+    border-color: rgba(179, 147, 104, 0.25);
   }
 
   .cta-button {
@@ -117,10 +118,24 @@
     @apply scale-95;
   }
 
+  .wa-button {
+    @apply inline-flex items-center justify-center min-h-12 px-6 w-full rounded-full text-sm font-semibold text-white transition-all duration-200;
+    background-color: #25d366;
+  }
+
+  .wa-button:hover {
+    @apply -translate-y-0.5 shadow-lg;
+    background-color: #20ba5a;
+  }
+
+  .wa-button:active {
+    @apply scale-95;
+  }
+
   .eyebrow {
     @apply text-xs font-semibold uppercase;
     letter-spacing: 0.2em;
-    color: var(--teal);
+    color: oklch(0.48 0.07 145);
   }
 
   .mini-divider {
@@ -162,8 +177,8 @@
 
   .section-symbol {
     @apply w-7 h-7 rounded-full flex items-center justify-center text-sm mb-2;
-    background-color: rgba(36, 95, 98, 0.1);
-    color: oklch(0.45 0.12 200);
+    background-color: rgba(108, 120, 87, 0.12);
+    color: oklch(0.48 0.07 145);
   }
 }
 
