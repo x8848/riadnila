@@ -1,5 +1,4 @@
 import { NavCardProps } from '@/utils/types'
-import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function NavCard({ image, title, kicker, to, href, disabled, className = '' }: NavCardProps) {
@@ -11,9 +10,6 @@ export default function NavCard({ image, title, kicker, to, href, disabled, clas
           <p className="text-xs font-medium uppercase tracking-wider text-white/70 mb-1">{kicker}</p>
           <h3 className="serif text-2xl font-medium text-white">{title}</h3>
         </div>
-        {!disabled && (
-          <ArrowUpRight className="w-5 h-5 text-white/70 group-hover:text-white transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        )}
       </div>
     </>
   )
