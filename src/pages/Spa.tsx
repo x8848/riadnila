@@ -10,18 +10,17 @@ export default function Spa() {
 
   return (
     <div className="min-h-screen bg-sand">
-      <Header title={t('spa') || 'SPA'} heroImage="/images/spa.jpeg" />
+      <Header title={t('spa')} heroImage="/images/spa.jpeg" />
 
       <section className="px-5 py-7">
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('nilaSpa') || 'Riad Nila SPA'}</p>
+          <p className="eyebrow mb-2">{t('nilaSpa')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">
-            {t('wellnessRelaxation') || 'Wellness & Relaxation'}
+            {t('wellnessRelaxation')}
           </h2>
           <div className="mini-divider" />
           <p className="text-sm leading-relaxed text-ink/80">
-            {t('spaDesc') ||
-              'Indulge in authentic Moroccan spa treatments designed to rejuvenate your body and soul. Our experienced therapists use traditional techniques and natural products to create a sanctuary of peace and wellness.'}
+            {t('spaDesc')}
           </p>
         </div>
 
@@ -52,7 +51,7 @@ export default function Spa() {
             <AlertCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="serif text-lg font-medium text-terracotta-deep mb-2">
-                {t('importantReservation') || 'Important Reservation Information'}
+                {t('importantReservation')}
               </h3>
               <div className="space-y-2 text-sm text-ink/80">
                 <p>
@@ -72,7 +71,7 @@ export default function Spa() {
         {/* Spa Information */}
         <div className="section-card mb-6">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('spaInformation') || 'Spa Information'}
+            {t('spaInformation')}
           </h3>
           <div className="space-y-3 text-sm">
             <div className="flex gap-3">
@@ -102,8 +101,7 @@ export default function Spa() {
         {/* Booking CTA */}
         <div className="section-card">
           <p className="text-sm text-muted-foreground mb-4">
-            {t('spaBookingNote') ||
-              'Book your spa treatment in advance to secure your preferred time slot. Contact us via WhatsApp to make a reservation.'}
+            {t('spaBookingNote')}
           </p>
           <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20book%20a%20spa%20treatment."

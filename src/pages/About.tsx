@@ -9,27 +9,25 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-sand">
-      <Header title={t('aboutRiad') || 'About the Riad'} heroImage="/images/about.jpeg" />
+      <Header title={t('aboutRiad')} heroImage="/images/about.jpeg" />
 
       <section className="px-5 py-7">
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('riadNilaAbout') || 'Riad Nila'}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('riadNila') || 'Riad Nila'}</h2>
+          <p className="eyebrow mb-2">{t('riadNilaAbout')}</p>
+          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('riadNila')}</h2>
           <div className="mini-divider" />
         </div>
 
         {/* Main Story */}
         <div className="section-card mb-6">
           <h3 className="serif text-xl font-medium text-terracotta-deep mb-3">
-            {t('haveBlueCity') || 'A Haven in the Blue City'}
+            {t('haveBlueCity')}
           </h3>
           <p className="text-sm leading-relaxed text-ink/80 mb-4">
-            {t('nestledEnchanting') ||
-              'Nestled in the enchanting medina of Chefchaouen, Riad Nila is a beautifully restored traditional Moroccan riad that embodies the essence of authentic hospitality. Our name, "Nila," reflects the serene blue hues that define this magical city.'}
+            {t('nestledEnchanting')}
           </p>
           <p className="text-sm leading-relaxed text-ink/80">
-            {t('everyCorner') ||
-              'Every corner of Riad Nila tells a story of careful restoration and thoughtful design, blending centuries-old architectural elements with modern comforts to create a sanctuary where guests can truly feel at home.'}
+            {t('everyCorner')}
           </p>
         </div>
 
@@ -117,7 +115,7 @@ export default function About() {
         {/* Why Choose Us */}
         <div className="section-card mb-6">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('whyChoose') || 'Why Choose Riad Nila?'}
+            {t('whyChoose')}
           </h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
@@ -145,9 +143,9 @@ export default function About() {
 
         {/* Contact */}
         <div className="section-card">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('getInTouch') || 'Get in Touch'}</h3>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('getInTouch')}</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            {t('haveQuestions') || "Have questions or ready to book your stay? We'd love to hear from you."}
+            {t('haveQuestions')}
           </p>
           <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20have%20a%20question%20about%20your%20riad."

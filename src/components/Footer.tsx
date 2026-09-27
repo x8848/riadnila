@@ -1,4 +1,6 @@
-import { MapPin, MessageCircle, Star } from 'lucide-react'
+import { Url } from '@/utils/enums'
+import { MapPin, MessageCircle, QrCode, Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -72,7 +74,16 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-sm text-white/60">
-          <p>© 2026 Riad Nila. All rights reserved.</p>
+          <p className="flex items-center justify-center gap-1.5">
+            <span>© {new Date().getFullYear()} Riad Nila. All rights reserved.</span>
+            <Link
+              to={Url.QRCode}
+              className="text-white/60 hover:text-yellow-400 transition-colors duration-200 inline-flex items-center"
+              title="QR Code"
+            >
+              <QrCode className="w-3.5 h-3.5" />
+            </Link>
+          </p>
           <p className="mt-1">A quiet haven in the heart of Chefchaouen</p>
         </div>
       </div>

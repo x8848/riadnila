@@ -94,7 +94,7 @@ export default function Breakfast() {
         {/* Service Hours */}
         <div className="section-card mb-4">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('serviceHours') || 'Service Hours'}
+            {t('serviceHours')}
           </h3>
           <div className="space-y-2 text-sm">
             <p>

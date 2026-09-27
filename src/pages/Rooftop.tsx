@@ -10,18 +10,17 @@ export default function Rooftop() {
 
   return (
     <div className="min-h-screen bg-sand">
-      <Header title={t('rooftopTerrace') || 'Rooftop Terrace Menu'} heroImage="/images/rooftop.jpeg" />
+      <Header title={t('rooftopTerrace')} heroImage="/images/rooftop.jpeg" />
 
       <section className="px-5 py-7">
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('panoramicViews') || 'Panoramic Views'}</p>
+          <p className="eyebrow mb-2">{t('panoramicViews')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">
-            {t('rooftopExperience') || '360° Rooftop Experience'}
+            {t('rooftopExperience')}
           </h2>
           <div className="mini-divider" />
           <p className="text-sm leading-relaxed text-ink/80">
-            {t('rooftopDesc') ||
-              'Enjoy breathtaking panoramic views of the Medina while savoring our carefully curated selection of desserts, hot drinks, and refreshing beverages. Perfect for sunrise, sunset, and stargazing.'}
+            {t('rooftopDesc')}
           </p>
         </div>
 
@@ -54,12 +53,12 @@ export default function Rooftop() {
         {/* Service Hours */}
         <div className="section-card mt-6 mb-4">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('serviceHours') || 'Service Hours'}
+            {t('serviceHours')}
           </h3>
           <div className="space-y-2 text-sm">
             <p>
               <span className="font-semibold">
-                {t('rooftopNote') || 'Open daily from sunset. Best reserved in advance for groups.'}
+                {t('rooftopNote')}
               </span>
             </p>
           </div>
@@ -68,7 +67,7 @@ export default function Rooftop() {
         {/* Book */}
         <div className="section-card">
           <p className="text-sm text-ink/80 mb-4">
-            {t('reservationsRecommended') || 'Reservations are recommended to ensure the best experience.'}
+            {t('reservationsRecommended')}
           </p>
           <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20reserve%20the%20rooftop."

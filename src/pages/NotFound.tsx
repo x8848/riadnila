@@ -3,23 +3,14 @@ import Header from '@/components/Header'
 import { Url } from '@/utils/enums'
 import { useLanguage } from '@/utils/i18n'
 import { Home } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function NotFound() {
-  const navigate = useNavigate()
   const { t } = useLanguage()
-
-  const handleGoBack = () => {
-    if (window.history.length > 1) {
-      navigate(-1)
-    } else {
-      navigate(Url.Home)
-    }
-  }
 
   return (
     <div className="min-h-screen min-h-[100dvh] bg-sand flex flex-col justify-between">
-      <Header heroImage="/images/info.jpeg" showBack={true} />
+      <Header heroImage="/images/info.jpeg" showBack={false} />
 
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-12 text-center my-auto">
         <div className="max-w-md mx-auto flex flex-col items-center">

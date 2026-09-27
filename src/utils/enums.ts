@@ -3,7 +3,7 @@ export enum Url {
   GuestInformation = '/guest-information',
   Restaurant = '/restaurant',
   Breakfast = '/restaurant/breakfast',
-  LunchDinner = '/restaurant/lunch-dinner',
+  Menu = '/restaurant/menu',
   Rooftop = '/restaurant/rooftop',
   Spa = '/spa',
   Services = '/services',

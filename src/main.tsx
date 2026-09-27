@@ -2,7 +2,7 @@ import About from '@/pages/About'
 import Breakfast from '@/pages/Breakfast'
 import GuestInfo from '@/pages/GuestInfo'
 import Home from '@/pages/Home'
-import LunchDinner from '@/pages/LunchDinner'
+import Menu from '@/pages/Menu'
 import NotFound from '@/pages/NotFound'
 import QRCodePrint from '@/pages/QRCodePrint'
 import Restaurant from '@/pages/Restaurant'
@@ -26,7 +26,7 @@ export default function App() {
           <Route path={Url.GuestInformation} element={<GuestInfo />} />
           <Route path={Url.Restaurant} element={<Restaurant />} />
           <Route path={Url.Breakfast} element={<Breakfast />} />
-          <Route path={Url.LunchDinner} element={<LunchDinner />} />
+          <Route path={Url.Menu} element={<Menu />} />
           <Route path={Url.Rooftop} element={<Rooftop />} />
           <Route path={Url.Spa} element={<Spa />} />
           <Route path={Url.Services} element={<Services />} />
