@@ -37,7 +37,7 @@ export default function GuestInfo() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
-                    <p className="text-xs text-muted-foreground">{amenity.description}</p>
+                    <p className="text-sm text-muted-foreground">{amenity.description}</p>
                   </div>
                 </div>
               </div>
@@ -47,11 +47,11 @@ export default function GuestInfo() {
 
         {/* Check-in & Check-out */}
         <div className="section-card mb-6">
-          <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-olive flex-shrink-0">✅</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">✅</span>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('checkInCheckOut')}</h3>
           </div>
-          <div className="space-y-3 text-sm ml-9">
+          <div className="space-y-3 text-sm">
             <div>
               <p className="font-semibold text-ink">{t('checkInFrom')}</p>
             </div>
@@ -68,11 +68,11 @@ export default function GuestInfo() {
 
         {/* House Rules & Policies */}
         <div className="section-card mb-6">
-          <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-olive flex-shrink-0">📋</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">📋</span>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('houseRules')}</h3>
           </div>
-          <div className="space-y-2 text-sm ml-9">
+          <div className="space-y-2 text-sm">
             <p className="text-muted-foreground">{t('quietHours')}</p>
             <p className="text-muted-foreground">{t('noSmoking')}</p>
             <p className="text-muted-foreground">{t('petsWelcome')}</p>
@@ -82,15 +82,15 @@ export default function GuestInfo() {
 
         {/* Services & Amenities */}
         <div className="section-card mb-6">
-          <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-olive flex-shrink-0">🛎️</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">🛎️</span>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('servicesAmenities')}</h3>
           </div>
-          <div className="space-y-4 ml-9">
+          <div className="space-y-4">
             {/* Accommodation */}
             <div>
               <p className="font-semibold text-ink text-sm mb-1">{t('accommodation')}</p>
-              <ul className="text-xs text-muted-foreground space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• {t('fifteenRooms')}</li>
                 <li>• {t('roomsRange')}</li>
               </ul>
@@ -99,7 +99,7 @@ export default function GuestInfo() {
             {/* Restaurant */}
             <div>
               <p className="font-semibold text-ink text-sm mb-1">{t('restaurant')}</p>
-              <ul className="text-xs text-muted-foreground space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• {t('ourRestaurant')}</li>
                 <li>• {t('breakfastServed')}</li>
                 <li>• {t('lunchDinner')}</li>
@@ -110,7 +110,7 @@ export default function GuestInfo() {
             {/* Spa */}
             <div>
               <p className="font-semibold text-ink text-sm mb-1">{t('spa')}</p>
-              <ul className="text-xs text-muted-foreground space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• {t('locatedSection')}</li>
                 <li>• {t('advanceBooking')}</li>
                 <li>• {t('browseFull')}</li>
@@ -121,7 +121,7 @@ export default function GuestInfo() {
             {/* Terraces & Rooftop */}
             <div>
               <p className="font-semibold text-ink text-sm mb-1">{t('terraces')}</p>
-              <ul className="text-xs text-muted-foreground space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• {t('twoLevels')}</li>
                 <li>• {t('perfectFor')}</li>
                 <li>• {t('rooftopMay')}</li>
@@ -132,11 +132,11 @@ export default function GuestInfo() {
 
         {/* Local Tips & Area Info */}
         <div className="section-card mb-6">
-          <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-olive flex-shrink-0">📍</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">📍</span>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('localTips')}</h3>
           </div>
-          <div className="space-y-2 text-sm ml-9">
+          <div className="space-y-2 text-sm">
             <p className="text-muted-foreground">{t('riadNilaJust')}</p>
             <p className="text-muted-foreground">{t('medinaStreets')}</p>
             <p className="text-muted-foreground">{t('weRecommend')}</p>
@@ -147,11 +147,11 @@ export default function GuestInfo() {
 
         {/* Housekeeping Note */}
         <div className="section-card mb-6">
-          <div className="flex gap-3 mb-3">
-            <div className="w-6 h-6 text-olive flex-shrink-0">🛏️</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">🛏️</span>
             <h3 className="serif text-lg font-medium text-terracotta-deep">{t('housekeeping')}</h3>
           </div>
-          <div className="space-y-3 text-sm ml-9">
+          <div className="space-y-3 text-sm">
             <p className="text-muted-foreground">{t('forGuests')}</p>
             <div className="bg-sand/50 rounded-lg p-3 space-y-2">
               <p className="text-muted-foreground">
@@ -167,7 +167,10 @@ export default function GuestInfo() {
 
         {/* Contact Information */}
         <div className="section-card">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('contactUs')}</h3>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">📞</span>
+            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('contact')}</h3>
+          </div>
           <a
             href="tel:+212662134431"
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors mb-3"

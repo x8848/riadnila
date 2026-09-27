@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import { useLanguage } from '@/utils/i18n'
 import { Heart, Home, Users } from 'lucide-react'
 
@@ -20,15 +20,9 @@ export default function About() {
 
         {/* Main Story */}
         <div className="section-card mb-6">
-          <h3 className="serif text-xl font-medium text-terracotta-deep mb-3">
-            {t('haveBlueCity')}
-          </h3>
-          <p className="text-sm leading-relaxed text-ink/80 mb-4">
-            {t('nestledEnchanting')}
-          </p>
-          <p className="text-sm leading-relaxed text-ink/80">
-            {t('everyCorner')}
-          </p>
+          <h3 className="serif text-xl font-medium text-terracotta-deep mb-3">{t('haveBlueCity')}</h3>
+          <p className="text-sm leading-relaxed text-ink/80 mb-4">{t('nestledEnchanting')}</p>
+          <p className="text-sm leading-relaxed text-ink/80">{t('everyCorner')}</p>
         </div>
 
         {/* Values */}
@@ -114,9 +108,7 @@ export default function About() {
 
         {/* Why Choose Us */}
         <div className="section-card mb-6">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('whyChoose')}
-          </h3>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('whyChoose')}</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
@@ -144,9 +136,7 @@ export default function About() {
         {/* Contact */}
         <div className="section-card">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('getInTouch')}</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            {t('haveQuestions')}
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">{t('haveQuestions')}</p>
           <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20have%20a%20question%20about%20your%20riad."
             label={t('contactUs')}

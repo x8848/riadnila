@@ -32,7 +32,7 @@ export default function Breakfast() {
               <li>• {t('blackTea')}</li>
               <li>• {t('chocolateMilk')}</li>
             </ul>
-            <p className="text-xs text-olive font-semibold mt-2">✓ {t('freshOrangeJuice')}</p>
+            <p className="text-sm text-olive font-semibold mt-2">✓ {t('freshOrangeJuice')}</p>
           </div>
 
           {/* Egg Choice */}
@@ -68,7 +68,7 @@ export default function Breakfast() {
 
           {/* Important Note */}
           <div className="bg-amber-50 border-l-4 border-gold p-3 rounded mb-4">
-            <p className="text-xs text-ink/70">
+            <p className="text-sm text-ink/80">
               <span className="font-semibold text-terracotta-deep">{t('important')}</span> {t('additionalFood')}
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function Breakfast() {
               <li>• {t('onTerrace')}</li>
               <li>• {t('inRestaurant')}</li>
             </ul>
-            <p className="text-xs text-muted-foreground mt-2">{t('pleaseNote')}</p>
+            <p className="text-sm text-muted-foreground mt-2">{t('pleaseNote')}</p>
           </div>
         </div>
 
@@ -93,9 +93,7 @@ export default function Breakfast() {
 
         {/* Service Hours */}
         <div className="section-card mb-4">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('serviceHours')}
-          </h3>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('serviceHours')}</h3>
           <div className="space-y-2 text-sm">
             <p>
               <span className="font-semibold">{t('breakfastServedBetween')}</span>

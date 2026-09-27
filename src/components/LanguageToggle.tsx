@@ -45,7 +45,7 @@ export default function LanguageToggle() {
         className="h-10 px-3 flex items-center gap-1.5 rounded-full text-sand bg-black/25 hover:bg-black/40 backdrop-blur-md border border-sand/40 transition-colors shadow-sm cursor-pointer"
       >
         <span className="text-base leading-none">{currentLanguage?.flag}</span>
-        <span className="text-xs font-semibold tracking-wider uppercase text-sand">{currentLanguage?.code}</span>
+        <span className="text-sm font-semibold tracking-wider uppercase text-sand">{currentLanguage?.code}</span>
       </button>
 
       {isOpen && (

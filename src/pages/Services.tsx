@@ -54,13 +54,9 @@ export default function Services() {
       <section className="px-5 py-7">
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('nilaServices')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">
-            {t('personalizedExperiences')}
-          </h2>
+          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('personalizedExperiences')}</h2>
           <div className="mini-divider" />
-          <p className="text-sm leading-relaxed text-ink/80">
-            {t('servicesDesc')}
-          </p>
+          <p className="text-sm leading-relaxed text-ink/80">{t('servicesDesc')}</p>
         </div>
 
         {/* Services Grid */}
@@ -74,7 +70,7 @@ export default function Services() {
                 <div className="flex-1">
                   <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{service.title}</h3>
                   <p className="text-sm text-ink/70 mb-2">{service.description}</p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
+                  <ul className="text-sm text-muted-foreground space-y-1">
                     {service.details.map((detail, detailIdx) => (
                       <li key={detailIdx} className="flex items-center gap-2">
                         <span className="w-1 h-1 rounded-full bg-gold" />
@@ -90,12 +86,8 @@ export default function Services() {
 
         {/* Concierge Information */}
         <div className="section-card mb-6">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">
-            {t('conciergeServices')}
-          </h3>
-          <p className="text-sm text-ink/70 mb-4">
-            {t('conciergeAvailable')}
-          </p>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('conciergeServices')}</h3>
+          <p className="text-sm text-ink/70 mb-4">{t('conciergeAvailable')}</p>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-gold mt-1">•</span>
@@ -118,9 +110,7 @@ export default function Services() {
 
         {/* Contact CTA */}
         <div className="section-card">
-          <p className="text-sm text-muted-foreground mb-4">
-            {t('contactConcierge')}
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">{t('contactConcierge')}</p>
           <WhatsAppButton
             href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20inquire%20about%20services."
             label={t('contactUs')}

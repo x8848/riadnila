@@ -62,7 +62,7 @@ export default function QRCodePrint() {
         {/* QR 1: Home / Guest Portal */}
         <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
           <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Guest Information</h2>
-          <p className="text-xs text-ink/70 mb-6 max-w-xs">
+          <p className="text-sm text-ink/70 mb-6 max-w-xs">
             Scan to access riad information, wifi guide, amenities, spa treatments, and concierge services.
           </p>
 
@@ -86,7 +86,7 @@ export default function QRCodePrint() {
             rel="noopener noreferrer"
             className="no-print group bg-sand/60 hover:bg-sand border border-stone-200/80 hover:border-terracotta-deep/30 px-4 py-2.5 rounded-xl mb-6 w-full block transition-colors text-center"
           >
-            <p className="text-xs font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
+            <p className="text-sm font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
               {HOME_URL}
             </p>
           </a>
@@ -94,9 +94,9 @@ export default function QRCodePrint() {
           <div className="no-print w-full">
             <button
               onClick={() => downloadQR(homeQrRef, 'riad-nila-home-qr.png')}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-4 h-4" />
               Download QR Code
             </button>
           </div>
@@ -105,7 +105,7 @@ export default function QRCodePrint() {
         {/* QR 2: Restaurant Menu */}
         <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
           <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Restaurant Menu</h2>
-          <p className="text-xs text-ink/70 mb-6 max-w-xs">
+          <p className="text-sm text-ink/70 mb-6 max-w-xs">
             Scan to view traditional Moroccan tagines, couscous, desserts, and rooftop beverage selections.
           </p>
 
@@ -129,7 +129,7 @@ export default function QRCodePrint() {
             rel="noopener noreferrer"
             className="no-print group bg-sand/60 hover:bg-sand border border-stone-200/80 hover:border-terracotta-deep/30 px-4 py-2.5 rounded-xl mb-6 w-full block transition-colors text-center"
           >
-            <p className="text-xs font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
+            <p className="text-sm font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
               {MENU_URL}
             </p>
           </a>
@@ -137,9 +137,9 @@ export default function QRCodePrint() {
           <div className="no-print w-full">
             <button
               onClick={() => downloadQR(menuQrRef, 'riad-nila-menu-qr.png')}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-4 h-4" />
               Download QR Code
             </button>
           </div>
@@ -147,7 +147,7 @@ export default function QRCodePrint() {
       </div>
 
       {/* Print Instructions footer - No print */}
-      <div className="no-print text-center text-xs text-ink/60 max-w-md">
+      <div className="no-print text-center text-sm text-ink/60 max-w-md">
         <p>Tip: Click "Print QR Codes" to print both cards cleanly on an A4 sheet for tables or reception.</p>
       </div>
 

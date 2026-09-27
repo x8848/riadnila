@@ -1,3 +1,4 @@
+import { Url } from '@/utils/enums'
 import type { HeaderProps } from '@/utils/types'
 import { ArrowLeft } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -6,7 +7,7 @@ import LanguageToggle from './LanguageToggle'
 export default function Header({ title, subtitle, showBack, heroImage }: HeaderProps) {
   const navigate = useNavigate()
   const location = useLocation()
-  const isHome = location.pathname === '/'
+  const isHome = location.pathname === Url.Home
   const shouldShowBack = showBack ?? !isHome
 
   return (
@@ -37,7 +38,7 @@ export default function Header({ title, subtitle, showBack, heroImage }: HeaderP
 
       {/* Title Area - Centered with single white logo above title */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pb-8 sm:pb-10 pt-2">
-        <Link to="/" className="flex items-center justify-center mb-3" title="Riad Nila Home">
+        <Link to={Url.Home} className="flex items-center justify-center mb-3" title="Riad Nila Home">
           <div
             role="img"
             aria-label="Riad Nila"

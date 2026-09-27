@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { Url } from './enums'
 
 export type Language = 'en' | 'fr' | 'es' | 'it' | 'de' | 'ja' | 'zh' | 'pt' | 'ar' | 'nl'
 
@@ -50,7 +51,7 @@ export interface LanguageOption {
 
 export interface NavCardItem {
   id: string
-  to: string
+  to: Url
   titleKey: string
   kickerKey: string
   image: string
@@ -58,7 +59,7 @@ export interface NavCardItem {
 
 export interface RestaurantMenuItem {
   id: string
-  to: string
+  to: Url | string
   titleKey: string
   kickerKey: string
   descriptionKey: string
@@ -70,7 +71,7 @@ export interface NavCardProps {
   image: string
   title: string
   kicker: string
-  to?: string
+  to?: Url | string
   href?: string
   disabled?: boolean
   className?: string

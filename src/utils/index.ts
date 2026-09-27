@@ -1,3 +1,4 @@
+export { Url } from './enums'
 import { Url } from './enums'
 import type { LanguageOption, MenuSection, NavCardItem, RestaurantMenuItem, Treatment } from './types'
 
@@ -14,7 +15,7 @@ export const languages: LanguageOption[] = [
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
 ]
 
-export const treatments: Treatment[] = [
+export const spaTreatments: Treatment[] = [
   {
     name: 'Hammam Tradition',
     duration: '60 min',
@@ -161,35 +162,35 @@ export const rooftopMenuSections: MenuSection[] = [
 export const navCards: NavCardItem[] = [
   {
     id: 'guest-info',
-    to: '/guest-information',
+    to: Url.GuestInfo,
     titleKey: 'guestInformation',
     kickerKey: 'yourComfortAwaits',
     image: '/images/info.jpeg',
   },
   {
     id: 'restaurant',
-    to: '/restaurant',
+    to: Url.Restaurant,
     titleKey: 'restaurant',
     kickerKey: 'flavoursOfMorocco',
     image: '/images/food.jpeg',
   },
   {
     id: 'spa',
-    to: '/spa',
+    to: Url.Spa,
     titleKey: 'spa',
     kickerKey: 'wellnessServices',
     image: '/images/spa.jpeg',
   },
   {
     id: 'services',
-    to: '/services',
+    to: Url.Services,
     titleKey: 'otherServices',
     kickerKey: 'conciergeServices',
     image: '/images/rooftop.jpeg',
   },
   {
     id: 'about',
-    to: '/about',
+    to: Url.About,
     titleKey: 'about',
     kickerKey: 'ourStory',
     image: '/images/about.jpeg',

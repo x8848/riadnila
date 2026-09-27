@@ -102,7 +102,7 @@
 
   .section-card {
     background: #f7f3ec;
-    @apply border rounded-2xl p-4 shadow-sm;
+    @apply border rounded-2xl py-4 px-6 shadow-sm;
     border-color: rgba(179, 147, 104, 0.25);
   }
 
@@ -133,7 +133,7 @@
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase;
+    @apply text-sm font-semibold uppercase;
     letter-spacing: 0.2em;
     color: oklch(0.48 0.07 145);
   }

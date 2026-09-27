@@ -1,6 +1,6 @@
 export enum Url {
   Home = '/',
-  GuestInformation = '/guest-information',
+  GuestInfo = '/info',
   Restaurant = '/restaurant',
   Breakfast = '/restaurant/breakfast',
   Menu = '/restaurant/menu',
