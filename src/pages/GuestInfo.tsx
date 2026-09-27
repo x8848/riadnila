@@ -17,7 +17,7 @@ export default function GuestInfo() {
 
       <Content>
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('nila')}</p>
+          <p className="eyebrow mb-2">{t('riadNila')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('yourComfortAwaits')}</h2>
           <div className="mini-divider" />
           <p className="text-sm leading-relaxed text-ink/80">{t('experienceAuthentic')}</p>

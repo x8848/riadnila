@@ -55,9 +55,9 @@ export default function Header({ title, subtitle, showBack, heroImage }: HeaderP
             }}
           />
         </Link>
-        {title && (
+        {/* {title && (
           <h1 className="serif text-3xl sm:text-4xl font-medium text-white tracking-wide px-4 py-2">{title}</h1>
-        )}
+        )} */}
         {subtitle && (
           <p className="serif italic text-base sm:text-lg leading-relaxed max-w-md mx-auto text-white/90 px-4 py-1.5 mt-1">
             {subtitle}

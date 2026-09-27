@@ -16,10 +16,8 @@ export default function Restaurant() {
 
       <Content>
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('nila')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('nilaRestaurant')}</h2>
-          <div className="mini-divider" />
-          <p className="text-sm leading-relaxed text-ink/80">{t('flavoursOfMorocco')}</p>
+          <p className="eyebrow mb-2">{t('riadNila')}</p>
+          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('restaurant')}</h2>
         </div>
 
         <div className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">

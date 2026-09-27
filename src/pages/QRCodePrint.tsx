@@ -60,11 +60,11 @@ export default function QRCodePrint() {
 
       {/* QR Code Cards Grid */}
       <div className="qr-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10">
-        {/* QR 1: Home / Guest Portal */}
+        {/* QR 1: Guest Information */}
         <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
           <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Guest Information</h2>
           <p className="text-sm text-ink/70 mb-6 max-w-xs">
-            Scan to access riad information, wifi guide, amenities, spa treatments, and concierge services.
+            Scan to access riad information, amenities, spa treatments, and concierge services.
           </p>
 
           <div
@@ -103,9 +103,9 @@ export default function QRCodePrint() {
           </div>
         </div>
 
-        {/* QR 2: Restaurant Menu */}
+        {/* QR 2: Lunch & Dinner Menu */}
         <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
-          <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Restaurant Menu</h2>
+          <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Lunch & Dinner Menu</h2>
           <p className="text-sm text-ink/70 mb-6 max-w-xs">
             Scan to view traditional Moroccan tagines, couscous, desserts, and beverages.
           </p>

@@ -49,7 +49,13 @@ export default function LanguageToggle() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-52 rounded-2xl bg-sand backdrop-blur-md shadow-2xl border border-stone-300/80 py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto">
+        <div
+          className="absolute right-0 mt-2 w-52 rounded-2xl shadow-2xl border py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto"
+          style={{
+            backgroundColor: '#f7f3ec',
+            borderColor: 'rgba(179, 147, 104, 0.25)',
+          }}
+        >
           {languages.map(lang => {
             const isSelected = language === lang.code
             return (

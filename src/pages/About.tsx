@@ -4,19 +4,18 @@ import Header from '@/components/Header'
 import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { useLanguage } from '@/utils/i18n'
-import { Heart, Home, Users } from 'lucide-react'
 
 export default function About() {
   const { t } = useLanguage()
 
   return (
     <Page>
-      <Header title={t('aboutRiad')} heroImage="/images/about.jpeg" />
+      <Header title={t('about')} heroImage="/images/about.jpeg" />
 
       <Content>
         <div className="mb-6">
-          <p className="eyebrow mb-2">{t('riadNilaAbout')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('riadNila')}</h2>
+          <p className="eyebrow mb-2">{t('riadNila')}</p>
+          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('ourStory')}</h2>
           <div className="mini-divider" />
         </div>
 
@@ -30,39 +29,27 @@ export default function About() {
         {/* Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="section-card">
-            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
-                <Heart className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('authenticHospitality')}</h3>
-                <p className="text-sm text-ink/70 leading-relaxed">{t('authenticHospitalityDesc')}</p>
-              </div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg leading-none">❤️</span>
+              <h3 className="serif text-lg font-medium text-terracotta-deep">{t('authenticHospitality')}</h3>
             </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{t('authenticHospitalityDesc')}</p>
           </div>
 
           <div className="section-card">
-            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
-                <Home className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('respectfulRestoration')}</h3>
-                <p className="text-sm text-ink/70 leading-relaxed">{t('respectfulRestorationDesc')}</p>
-              </div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg leading-none">🏛️</span>
+              <h3 className="serif text-lg font-medium text-terracotta-deep">{t('respectfulRestoration')}</h3>
             </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{t('respectfulRestorationDesc')}</p>
           </div>
 
           <div className="section-card">
-            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
-                <Users className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('communityConnection')}</h3>
-                <p className="text-sm text-ink/70 leading-relaxed">{t('communityConnectionDesc')}</p>
-              </div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg leading-none">🤝</span>
+              <h3 className="serif text-lg font-medium text-terracotta-deep">{t('communityConnection')}</h3>
             </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{t('communityConnectionDesc')}</p>
           </div>
         </div>
 
