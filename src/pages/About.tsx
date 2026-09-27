@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { useLanguage } from '@/utils/i18n'
 import { Heart, Home, Users } from 'lucide-react'
@@ -9,7 +10,7 @@ export default function About() {
   const { t } = useLanguage()
 
   return (
-    <div className="min-h-screen bg-sand">
+    <Page>
       <Header title={t('aboutRiad')} heroImage="/images/about.jpeg" />
 
       <Content>
@@ -128,6 +129,6 @@ export default function About() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </Page>
   )
 }

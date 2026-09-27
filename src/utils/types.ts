@@ -84,3 +84,13 @@ export interface NavCardProps {
   disabled?: boolean
   className?: string
 }
+
+export interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  className?: string
+}
+
+export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  className?: string
+}

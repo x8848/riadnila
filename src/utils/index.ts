@@ -11,6 +11,8 @@ import type {
   Treatment,
 } from './types'
 
+export const OCTORATE_URL = `https://book.octorate.com/octobook/site/reservation/index.xhtml;octobooksessionid=26a078a9c0bd7bab60b71d1e532e?codice=470391`
+
 export const languages: LanguageOption[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },

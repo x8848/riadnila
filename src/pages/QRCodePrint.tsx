@@ -1,3 +1,4 @@
+import Page from '@/components/Page'
 import { Url } from '@/utils/enums'
 import { ArrowLeft, Download, Printer } from 'lucide-react'
 import { QRCodeCanvas } from 'qrcode.react'
@@ -27,7 +28,7 @@ export default function QRCodePrint() {
   }
 
   return (
-    <div className="min-h-screen bg-sand py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center print:bg-white print:p-0">
+    <Page className="py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center print:bg-white print:p-0">
       {/* Top Bar - No Print */}
       <div className="no-print w-full max-w-5xl flex items-center justify-between mb-8">
         <button
@@ -181,6 +182,6 @@ export default function QRCodePrint() {
           }
         }
       `}</style>
-    </div>
+    </Page>
   )
 }

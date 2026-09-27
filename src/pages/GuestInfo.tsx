@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getAmenities } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
@@ -11,7 +12,7 @@ export default function GuestInfo() {
   const amenities = getAmenities(t)
 
   return (
-    <div className="min-h-screen bg-sand">
+    <Page>
       <Header title={t('guestInformation')} heroImage="/images/info.jpeg" />
 
       <Content>
@@ -181,6 +182,6 @@ export default function GuestInfo() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </Page>
   )
 }

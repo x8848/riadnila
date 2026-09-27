@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getServices } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
@@ -10,7 +11,7 @@ export default function Services() {
   const services = getServices(t)
 
   return (
-    <div className="min-h-screen bg-sand">
+    <Page>
       <Header title={t('otherServices')} heroImage="/images/rooftop.jpeg" />
 
       <Content>
@@ -83,6 +84,6 @@ export default function Services() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </Page>
   )
 }

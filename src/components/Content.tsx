@@ -1,9 +1,4 @@
-import React from 'react'
-
-interface ContentProps extends React.HTMLAttributes<HTMLElement> {
-  children: React.ReactNode
-  className?: string
-}
+import { ContentProps } from '@/utils/types'
 
 export default function Content({ children, className = '', ...props }: ContentProps) {
   return (

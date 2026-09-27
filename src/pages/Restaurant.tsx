@@ -2,6 +2,7 @@ import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
+import Page from '@/components/Page'
 import { getRestaurantMenus } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
@@ -10,7 +11,7 @@ export default function Restaurant() {
   const restaurantMenus = getRestaurantMenus(t)
 
   return (
-    <div className="min-h-screen bg-sand">
+    <Page>
       <Header title={t('restaurant')} heroImage="/images/food.jpeg" />
 
       <Content>
@@ -36,6 +37,6 @@ export default function Restaurant() {
       </Content>
 
       <Footer />
-    </div>
+    </Page>
   )
 }

@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Page from '@/components/Page'
 import { Url } from '@/utils/enums'
 import { useLanguage } from '@/utils/i18n'
 import { Home } from 'lucide-react'
@@ -9,7 +10,7 @@ export default function NotFound() {
   const { t } = useLanguage()
 
   return (
-    <div className="min-h-screen min-h-[100dvh] bg-sand flex flex-col justify-between">
+    <Page className="min-h-[100dvh] flex flex-col justify-between">
       <Header heroImage="/images/info.jpeg" showBack={false} />
 
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-12 text-center my-auto">
@@ -28,6 +29,6 @@ export default function NotFound() {
       </main>
 
       <Footer />
-    </div>
+    </Page>
   )
 }

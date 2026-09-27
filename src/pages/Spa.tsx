@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getSpaTreatments } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
@@ -11,7 +12,7 @@ export default function Spa() {
   const spaTreatments = getSpaTreatments(t)
 
   return (
-    <div className="min-h-screen bg-sand">
+    <Page>
       <Header title={t('spa')} heroImage="/images/spa.jpeg" />
 
       <Content>
@@ -108,6 +109,6 @@ export default function Spa() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </Page>
   )
 }
