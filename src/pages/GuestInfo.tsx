@@ -6,6 +6,7 @@ import { Droplet, Phone, Utensils, Wifi, Wind } from 'lucide-react'
 
 export default function GuestInfo() {
   const { t } = useLanguage()
+
   const amenities = [
     { icon: Wifi, title: t('freeWiFi'), description: t('highSpeedInternet') },
     { icon: Utensils, title: t('restaurant'), description: t('onSiteDining') },

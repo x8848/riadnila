@@ -1,14 +1,14 @@
 import { Url } from '@/utils/enums'
+import { useLanguage } from '@/utils/i18n'
 import { MapPin, MessageCircle, QrCode, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-gradient-to-b from-transparent to-black/80 py-8 px-6 text-white">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* Divider */}
-        {/* <div className="border-t border-white/20 mb-6 w-full" /> */}
-
         {/* Social Media Links */}
         <div className="flex justify-center gap-6 mb-6">
           {/* Instagram */}
@@ -75,7 +75,9 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center text-sm text-white/60">
           <p className="flex items-center justify-center gap-1.5">
-            <span>© {new Date().getFullYear()} Riad Nila. All rights reserved.</span>
+            <span>
+              © {new Date().getFullYear()} Riad Nila. {t('allRightsReserved')}
+            </span>
             <Link
               to={Url.QRCode}
               className="text-white/60 hover:text-yellow-400 transition-colors duration-200 inline-flex items-center"
@@ -84,7 +86,7 @@ export default function Footer() {
               <QrCode className="w-3.5 h-3.5" />
             </Link>
           </p>
-          <p className="mt-1">A quiet haven in the heart of Chefchaouen</p>
+          <p className="mt-1">{t('tagline')}</p>
         </div>
       </div>
     </footer>

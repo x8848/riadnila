@@ -1,6 +1,6 @@
 export { Url } from './enums'
 import { Url } from './enums'
-import type { LanguageOption, MenuSection, NavCardItem, RestaurantMenuItem, Treatment } from './types'
+import type { LanguageOption, MenuSection, NavCardItem, RestaurantMenuItem, Service, Treatment } from './types'
 
 export const languages: LanguageOption[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -13,150 +13,6 @@ export const languages: LanguageOption[] = [
   { code: 'ja', name: '日本語', flag: '🇯🇵' },
   { code: 'zh', name: '中文', flag: '🇨🇳' },
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-]
-
-export const spaTreatments: Treatment[] = [
-  {
-    name: 'Hammam Tradition',
-    duration: '60 min',
-    price: '500 MAD',
-    description: 'Authentic Moroccan steam bath experience - 1 person',
-  },
-  {
-    name: 'Massage',
-    duration: '60 min',
-    price: '600 MAD',
-    description: 'Relaxing therapeutic massage - 1 person',
-  },
-  {
-    name: 'Nila Ritual',
-    duration: '',
-    price: '1000 MAD',
-    description: 'Premium experience combining hammam and massage - 1 person. Duration varies based on preferences.',
-  },
-]
-
-export const rooftopMenuSections: MenuSection[] = [
-  {
-    title: 'Desserts & Sweet Endings',
-    kicker: 'Sweet Indulgence',
-    symbol: '✦',
-    items: [
-      {
-        name: 'Gourmet Caramel Flan',
-        price: '70 MAD',
-        description: 'Silky, smooth vanilla bean custard topped with a rich, deep amber caramel sauce.',
-      },
-      {
-        name: 'Nila Mhalabia',
-        price: '45 MAD',
-        description:
-          'Upscale creamy Middle Eastern milk pudding infused with orange blossom water, garnished with dried fruits, roasted exotic nuts, and cinnamon.',
-      },
-      {
-        name: 'Luxury Cheesecake',
-        price: '50 MAD',
-        description:
-          'Rich and creamy artisan cheesecake finished with a choice of wild berry coulis or salted caramel.',
-      },
-      {
-        name: 'Moroccan Sweet Assortment',
-        price: '50 MAD',
-        description:
-          'A curated premium selection of traditional Moroccan almond pastries and homemade sweet delicacies.',
-      },
-      {
-        name: 'Seasonal Fruit Platter',
-        price: '60 MAD',
-        description: 'An elegant, beautiful presentation of freshly sliced local and seasonal premium fruits.',
-      },
-    ],
-  },
-  {
-    title: 'Hot Drinks',
-    kicker: 'Warm Ritual',
-    symbol: '✦',
-    items: [
-      {
-        name: 'Moroccan Mint Tea (Premium Ritual)',
-        price: '30 MAD',
-        description: 'Fresh organic mint and fine green tea served in a traditional luxury teapot ritual.',
-      },
-      {
-        name: 'Berber Mountain Tea',
-        price: '40 MAD',
-        description: 'Wild Rif mountain herbs blended with fresh mint.',
-      },
-      { name: 'Espresso', price: '30 MAD' },
-      { name: 'Double Espresso', price: '45 MAD' },
-      {
-        name: 'Americano',
-        price: '35 MAD',
-        description: 'Rich espresso lengthened with hot purified water.',
-      },
-      {
-        name: 'Café Latte',
-        price: '30 MAD',
-        description: 'Premium espresso with silky, velvety steamed milk.',
-      },
-      {
-        name: 'Hot Chocolate',
-        price: '50 MAD',
-        description: 'Premium chocolate with steamed milk.',
-      },
-    ],
-  },
-  {
-    title: 'Cold Drinks, Juices & Signature Smoothies',
-    kicker: 'Cool & Bright',
-    symbol: '✦',
-    items: [
-      {
-        name: 'Freshly Squeezed Orange Juice',
-        price: '40 MAD',
-      },
-      {
-        name: 'Signature Lemon Mint Juice',
-        price: '35 MAD',
-        description: 'An ultra-refreshing local recipe of freshly blended lemons, cold water, and organic mint.',
-      },
-      {
-        name: 'Avocado & Almond Smoothie',
-        price: '55 MAD',
-        description: 'Creamy avocado blended with organic milk, pure honey, and crushed toasted almonds.',
-      },
-      {
-        name: 'Banana & Honey Smoothie',
-        price: '45 MAD',
-      },
-      {
-        name: 'Strawberry & Yogurt Smoothie',
-        price: '50 MAD',
-      },
-      {
-        name: 'Tropical Bliss Smoothie',
-        price: '65 MAD',
-        description: 'Mango, pineapple, and banana.',
-      },
-      {
-        name: 'Mango & Banana Smoothie',
-        price: '50 MAD',
-      },
-      {
-        name: 'Mixed Fruit Smoothie',
-        price: '60 MAD',
-        description: 'A blend of premium seasonal fruits.',
-      },
-      {
-        name: 'Sodas',
-        price: '20 MAD',
-        description: '(Coca-Cola, Coca-Cola Zero, Sprite, Hawaii, Fanta, Schweppes)',
-      },
-      { name: 'Energy Drink', price: '40 MAD' },
-      { name: 'Mineral Water (Small / Large)', price: '15 MAD / 30 MAD' },
-      { name: 'Sparkling Water (Small / Large)', price: '20 MAD / 35 MAD' },
-    ],
-  },
 ]
 
 export const navCards: NavCardItem[] = [
@@ -390,5 +246,98 @@ export const getMenuSections = (t: (key: string) => string = k => k): MenuSectio
       { name: t('mineralWaterSmallLarge'), price: '10 MAD / 20 MAD' },
       { name: t('sparklingWaterSmallLarge'), price: '25 MAD / 35 MAD' },
     ],
+  },
+]
+
+export const getRooftopMenuSections = (t: (key: string) => string = k => k): MenuSection[] => [
+  {
+    title: t('dessertsSweet'),
+    kicker: t('sweetIndulgence'),
+    symbol: '✦',
+    items: [
+      { name: t('gourmetCaramelFlan'), price: '70 MAD', description: t('gourmetCaramelFlanDesc') },
+      { name: t('nilaMhalabia'), price: '45 MAD', description: t('nilaMhalabiaDesc') },
+      { name: t('luxuryCheesecake'), price: '50 MAD', description: t('luxuryCheesecakeDesc') },
+      { name: t('moroccanSweetAssortment'), price: '50 MAD', description: t('moroccanSweetAssortmentDesc') },
+      { name: t('seasonalFruitPlatter'), price: '60 MAD', description: t('seasonalFruitPlatterDesc') },
+    ],
+  },
+  {
+    title: t('hotDrinks'),
+    kicker: t('warmRitualKicker'),
+    symbol: '✦',
+    items: [
+      { name: t('moroccanMintTeaPremium'), price: '30 MAD', description: t('moroccanMintTeaPremiumDesc') },
+      { name: t('berberMountainTea'), price: '40 MAD', description: t('berberMountainTeaDesc') },
+      { name: t('espresso'), price: '30 MAD' },
+      { name: t('doubleEspresso'), price: '45 MAD' },
+      { name: t('americano'), price: '35 MAD', description: t('americanoDesc') },
+      { name: t('cafeLatte'), price: '30 MAD', description: t('cafeLatteDesc') },
+      { name: t('hotChocolate'), price: '50 MAD', description: t('hotChocolateDesc') },
+    ],
+  },
+  {
+    title: t('coldDrinksJuicesSmoothies'),
+    kicker: t('coolBrightKicker'),
+    symbol: '✦',
+    items: [
+      { name: t('freshlySqueezedOrangeJuice'), price: '40 MAD' },
+      { name: t('signatureLemonMintJuice'), price: '35 MAD', description: t('signatureLemonMintJuiceDesc') },
+      { name: t('avocadoAlmondSmoothie'), price: '55 MAD', description: t('avocadoAlmondSmoothieDesc') },
+      { name: t('bananaHoneySmoothie'), price: '45 MAD' },
+      { name: t('strawberryYogurtSmoothie'), price: '50 MAD' },
+      { name: t('tropicalBlissSmoothie'), price: '65 MAD', description: t('tropicalBlissSmoothieDesc') },
+      { name: t('mangoBananaSmoothie'), price: '50 MAD' },
+      { name: t('mixedFruitSmoothie'), price: '60 MAD', description: t('mixedFruitSmoothieDesc') },
+      { name: t('sodas'), price: '20 MAD', description: t('sodasDesc') },
+      { name: t('energyDrink'), price: '40 MAD' },
+      { name: t('mineralWater'), price: '15 MAD / 30 MAD' },
+      { name: t('sparklingWater'), price: '20 MAD / 35 MAD' },
+    ],
+  },
+]
+
+export const getSpaTreatments = (t: (key: string) => string = k => k): Treatment[] => [
+  { name: t('hammamTradition'), duration: '60 min', price: '500 MAD', description: t('hammamTraditionDesc') },
+  { name: t('massage'), duration: '60 min', price: '600 MAD', description: t('massageDesc') },
+  { name: t('nilaRitual'), duration: '', price: '1000 MAD', description: t('nilaRitualDesc') },
+]
+
+export const getServices = (t: (key: string) => string = k => k): Service[] => [
+  {
+    icon: '🧭',
+    title: t('guidedCityTours'),
+    description: t('guidedCityToursDesc'),
+    details: [t('medinaWalkingTours'), t('hiddenGemsDiscovery'), t('photographyTours'), t('sunsetViewpointVisits')],
+  },
+  {
+    icon: '📸',
+    title: t('photographyServicesTitle'),
+    description: t('photographyServicesDesc'),
+    details: [t('portraitSessions'), t('couplePhotoshoots'), t('groupPhotography'), t('sunsetSessions')],
+  },
+  {
+    icon: '📍',
+    title: t('dayExcursions'),
+    description: t('dayExcursionsDesc'),
+    details: [t('mountainHikes'), t('waterfallVisits'), t('berberVillages'), t('artisanWorkshops')],
+  },
+  {
+    icon: '🛍️',
+    title: t('shoppingAssistanceTitle'),
+    description: t('shoppingAssistanceDesc'),
+    details: [t('soukGuidance'), t('artisanIntroductions'), t('authenticPurchases'), t('negotiationSupport')],
+  },
+  {
+    icon: '👥',
+    title: t('groupEvents'),
+    description: t('groupEventsDesc'),
+    details: [t('privateDinners'), t('celebrations'), t('workshops'), t('retreats')],
+  },
+  {
+    icon: '📖',
+    title: t('culturalExperiences'),
+    description: t('culturalExperiencesDesc'),
+    details: [t('cookingClasses'), t('traditionalCrafts'), t('musicSessions'), t('languageLessons')],
   },
 ]

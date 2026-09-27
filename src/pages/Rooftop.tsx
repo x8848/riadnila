@@ -1,12 +1,12 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import { rooftopMenuSections } from '@/utils'
+import { getRooftopMenuSections } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function Rooftop() {
   const { t } = useLanguage()
-  const menuSections = rooftopMenuSections
+  const menuSections = getRooftopMenuSections(t)
 
   return (
     <div className="min-h-screen bg-sand">

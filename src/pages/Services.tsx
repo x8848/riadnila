@@ -1,51 +1,12 @@
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import Header from '@/components/Header'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import { getServices } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
-import { BookOpen, Camera, Compass, MapPin, ShoppingBag, Users } from 'lucide-react'
-
-import type { Service } from '@/utils/types'
 
 export default function Services() {
   const { t } = useLanguage()
-  const services: Service[] = [
-    {
-      icon: <Compass className="w-6 h-6" />,
-      title: 'Guided City Tours',
-      description: 'Explore Chefchaouen with our knowledgeable local guides',
-      details: ['Medina walking tours', 'Hidden gems discovery', 'Photography tours', 'Sunset viewpoint visits'],
-    },
-    {
-      icon: <Camera className="w-6 h-6" />,
-      title: 'Photography Services',
-      description: 'Professional photography for your Moroccan memories',
-      details: ['Portrait sessions', 'Couple photoshoots', 'Group photography', 'Sunset sessions'],
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Day Excursions',
-      description: 'Curated day trips to nearby attractions',
-      details: ['Mountain hikes', 'Waterfall visits', 'Berber villages', 'Artisan workshops'],
-    },
-    {
-      icon: <ShoppingBag className="w-6 h-6" />,
-      title: 'Shopping Assistance',
-      description: 'Personal shopping and market navigation',
-      details: ['Souk guidance', 'Artisan introductions', 'Authentic purchases', 'Negotiation support'],
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: 'Group Events',
-      description: 'Host your special events at Riad Nila',
-      details: ['Private dinners', 'Celebrations', 'Workshops', 'Retreats'],
-    },
-    {
-      icon: <BookOpen className="w-6 h-6" />,
-      title: 'Cultural Experiences',
-      description: 'Immerse yourself in Moroccan culture',
-      details: ['Cooking classes', 'Traditional crafts', 'Music sessions', 'Language lessons'],
-    },
-  ]
+  const services = getServices(t)
 
   return (
     <div className="min-h-screen bg-sand">
@@ -60,50 +21,49 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-4 mb-6">
           {services.map((service, idx) => (
             <div key={idx} className="section-card">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
-                  {service.icon}
-                </div>
-                <div className="flex-1">
-                  <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{service.title}</h3>
-                  <p className="text-sm text-ink/70 mb-2">{service.description}</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    {service.details.map((detail, detailIdx) => (
-                      <li key={detailIdx} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-gold" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg leading-none">{service.icon}</span>
+                <h3 className="serif text-lg font-medium text-terracotta-deep">{service.title}</h3>
               </div>
+              <p className="text-sm text-ink/80 mb-3">{service.description}</p>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                {service.details.map((detail, detailIdx) => (
+                  <li key={detailIdx} className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-gold" />
+                    {detail}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
         {/* Concierge Information */}
         <div className="section-card mb-6">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('conciergeServices')}</h3>
-          <p className="text-sm text-ink/70 mb-4">{t('conciergeAvailable')}</p>
-          <ul className="space-y-2 text-sm">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg leading-none">🛎️</span>
+            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('conciergeServices')}</h3>
+          </div>
+          <p className="text-sm text-ink/80 mb-3">{t('conciergeAvailable')}</p>
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
-              <span className="text-gold mt-1">•</span>
-              <span>Restaurant reservations and dining recommendations</span>
+              <span className="text-gold mt-0.5">•</span>
+              <span>{t('conciergeItem1')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-gold mt-1">•</span>
-              <span>Transportation and vehicle rentals</span>
+              <span className="text-gold mt-0.5">•</span>
+              <span>{t('conciergeItem2')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-gold mt-1">•</span>
-              <span>Activity bookings and tour arrangements</span>
+              <span className="text-gold mt-0.5">•</span>
+              <span>{t('conciergeItem3')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-gold mt-1">•</span>
-              <span>Special requests and custom arrangements</span>
+              <span className="text-gold mt-0.5">•</span>
+              <span>{t('conciergeItem4')}</span>
             </li>
           </ul>
         </div>

@@ -33,10 +33,9 @@ export default function About() {
                 <Heart className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">Authentic Hospitality</h3>
+                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('authenticHospitality')}</h3>
                 <p className="text-sm text-ink/70">
-                  We believe in genuine connections and personalized service that makes every guest feel valued and
-                  cherished.
+                  {t('authenticHospitalityDesc')}
                 </p>
               </div>
             </div>
@@ -48,10 +47,9 @@ export default function About() {
                 <Home className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">Respectful Restoration</h3>
+                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('respectfulRestoration')}</h3>
                 <p className="text-sm text-ink/70">
-                  We honor Moroccan traditions and architectural heritage while providing contemporary comfort and
-                  amenities.
+                  {t('respectfulRestorationDesc')}
                 </p>
               </div>
             </div>
@@ -63,10 +61,9 @@ export default function About() {
                 <Users className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">Community Connection</h3>
+                <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('communityConnection')}</h3>
                 <p className="text-sm text-ink/70">
-                  We support local artisans, source from local suppliers, and share the rich culture of Chefchaouen with
-                  our guests.
+                  {t('communityConnectionDesc')}
                 </p>
               </div>
             </div>
@@ -75,32 +72,30 @@ export default function About() {
 
         {/* Rooms & Facilities */}
         <div className="section-card mb-6">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">Rooms & Facilities</h3>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('roomsFacilities')}</h3>
           <div className="space-y-3 text-sm">
             <div>
-              <p className="font-semibold text-ink mb-1">Accommodations</p>
+              <p className="font-semibold text-ink mb-1">{t('accommodations')}</p>
               <p className="text-muted-foreground">
-                Thoughtfully designed rooms featuring traditional Moroccan décor, comfortable beds, ensuite bathrooms,
-                and modern amenities.
+                {t('accommodationsDesc')}
               </p>
             </div>
             <div>
-              <p className="font-semibold text-ink mb-1">Common Spaces</p>
+              <p className="font-semibold text-ink mb-1">{t('commonSpaces')}</p>
               <p className="text-muted-foreground">
-                Enjoy our central courtyard with traditional fountain, rooftop terrace with panoramic views, and
-                comfortable lounges.
+                {t('commonSpacesDesc')}
               </p>
             </div>
             <div>
-              <p className="font-semibold text-ink mb-1">Dining</p>
+              <p className="font-semibold text-ink mb-1">{t('dining')}</p>
               <p className="text-muted-foreground">
-                On-site restaurant serving authentic Moroccan cuisine, plus rooftop bar for evening refreshments.
+                {t('diningDesc')}
               </p>
             </div>
             <div>
-              <p className="font-semibold text-ink mb-1">Wellness</p>
+              <p className="font-semibold text-ink mb-1">{t('wellness')}</p>
               <p className="text-muted-foreground">
-                Traditional hammam and spa services offering rejuvenating treatments and authentic Moroccan rituals.
+                {t('wellnessDesc')}
               </p>
             </div>
           </div>
@@ -112,23 +107,23 @@ export default function About() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
-              <span>Prime location in Chefchaouen's historic medina</span>
+              <span>{t('whyChoose1')}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
-              <span>Authentic Moroccan experience with modern comfort</span>
+              <span>{t('whyChoose2')}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
-              <span>Exceptional hospitality and personalized service</span>
+              <span>{t('whyChoose3')}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
-              <span>Complete amenities: dining, spa, and concierge</span>
+              <span>{t('whyChoose4')}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gold font-bold mt-0.5">✓</span>
-              <span>Support for local community and artisans</span>
+              <span>{t('whyChoose5')}</span>
             </li>
           </ul>
         </div>

@@ -30,7 +30,7 @@ export interface MenuSection {
 }
 
 export interface Service {
-  icon: ReactNode
+  icon: ReactNode | string
   title: string
   description: string
   details: string[]

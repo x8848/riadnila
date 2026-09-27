@@ -1,12 +1,13 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import { spaTreatments } from '@/utils'
+import { getSpaTreatments } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 import { AlertCircle, Clock, Droplet, Users } from 'lucide-react'
 
 export default function Spa() {
   const { t } = useLanguage()
+  const spaTreatments = getSpaTreatments(t)
 
   return (
     <div className="min-h-screen bg-sand">
@@ -49,13 +50,13 @@ export default function Spa() {
               <h3 className="serif text-lg font-medium text-terracotta-deep mb-2">{t('importantReservation')}</h3>
               <div className="space-y-2 text-sm text-ink/80">
                 <p>
-                  <span className="font-semibold">⏰ Advance Booking Required:</span> Minimum 2 hours in advance
+                  <span className="font-semibold">⏰ {t('spaAdvanceBookingNotice')}</span> {t('spaAdvanceBookingNoticeDesc')}
                 </p>
                 <p>
-                  <span className="font-semibold">🕘 Operating Hours:</span> 9:00 AM - 10:00 PM daily
+                  <span className="font-semibold">🕘 {t('spaOperatingHoursNotice')}</span> {t('spaOperatingHoursNoticeDesc')}
                 </p>
                 <p>
-                  <span className="font-semibold">👥 Capacity:</span> Maximum 2 people inside the spa at the same time
+                  <span className="font-semibold">👥 {t('spaCapacityNotice')}</span> {t('spaCapacityNoticeDesc')}
                 </p>
               </div>
             </div>
@@ -69,22 +70,22 @@ export default function Spa() {
             <div className="flex gap-3">
               <Clock className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-ink">Hours</p>
-                <p className="text-muted-foreground">Daily 9:00 AM - 10:00 PM</p>
+                <p className="font-semibold text-ink">{t('spaHoursTitle')}</p>
+                <p className="text-muted-foreground">{t('spaHoursDesc')}</p>
               </div>
             </div>
             <div className="flex gap-3">
               <Users className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-ink">Advance Booking</p>
-                <p className="text-muted-foreground">Minimum 2 hours in advance required</p>
+                <p className="font-semibold text-ink">{t('spaAdvanceBookingTitle')}</p>
+                <p className="text-muted-foreground">{t('spaAdvanceBookingDesc')}</p>
               </div>
             </div>
             <div className="flex gap-3">
               <Droplet className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-ink">Natural Products</p>
-                <p className="text-muted-foreground">100% organic and locally sourced</p>
+                <p className="font-semibold text-ink">{t('spaNaturalProductsTitle')}</p>
+                <p className="text-muted-foreground">{t('spaNaturalProductsDesc')}</p>
               </div>
             </div>
           </div>
