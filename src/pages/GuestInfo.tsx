@@ -1,18 +1,13 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { getAmenities } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
-import { Droplet, Phone, Utensils, Wifi, Wind } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export default function GuestInfo() {
   const { t } = useLanguage()
-
-  const amenities = [
-    { icon: Wifi, title: t('freeWiFi'), description: t('highSpeedInternet') },
-    { icon: Utensils, title: t('restaurant'), description: t('onSiteDining') },
-    { icon: Droplet, title: t('hotWater'), description: t('hotWaterSupply') },
-    { icon: Wind, title: t('airConditioning'), description: t('climateControl') },
-  ]
+  const amenities = getAmenities(t)
 
   return (
     <div className="min-h-screen bg-sand">
@@ -28,22 +23,19 @@ export default function GuestInfo() {
 
         {/* Amenities Grid */}
         <div className="space-y-3 mb-8">
-          {amenities.map((amenity, idx) => {
-            const Icon = amenity.icon
-            return (
-              <div key={idx} className="section-card">
-                <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-olive" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
-                    <p className="text-sm text-muted-foreground">{amenity.description}</p>
-                  </div>
+          {amenities.map((amenity, idx) => (
+            <div key={idx} className="section-card">
+              <div className="flex gap-3">
+                <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-xl leading-none">
+                  {amenity.icon}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
+                  <p className="text-sm text-muted-foreground">{amenity.description}</p>
                 </div>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
 
         {/* Check-in & Check-out */}

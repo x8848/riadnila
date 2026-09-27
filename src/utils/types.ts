@@ -3,10 +3,12 @@ import type { Url } from './enums'
 
 export type Language = 'en' | 'fr' | 'es' | 'it' | 'de' | 'ja' | 'zh' | 'pt' | 'ar' | 'nl'
 
+export type TranslateFn = (key: string) => string
+
 export interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: TranslateFn
 }
 
 export interface HeaderProps {
@@ -36,6 +38,12 @@ export interface Service {
   details: string[]
 }
 
+export interface Amenity {
+  icon: ReactNode | string
+  title: string
+  description: string
+}
+
 export interface Treatment {
   name: string
   duration: string
@@ -52,19 +60,19 @@ export interface LanguageOption {
 export interface NavCardItem {
   id: string
   to: Url
-  titleKey: string
-  kickerKey: string
   image: string
+  title: string
+  kicker: string
 }
 
 export interface RestaurantMenuItem {
   id: string
   to: Url | string
-  titleKey: string
-  kickerKey: string
-  descriptionKey: string
   image: string
   disabled: boolean
+  title: string
+  kicker: string
+  description?: string
 }
 
 export interface NavCardProps {

@@ -1,11 +1,12 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
-import { navCards } from '@/utils'
+import { getNavCards } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function Home() {
   const { language, t } = useLanguage()
+  const navCards = getNavCards(t)
 
   return (
     <div className="min-h-screen bg-sand" dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -23,13 +24,7 @@ export default function Home() {
         {/* Navigation Cards */}
         <div className="space-y-4">
           {navCards.map(card => (
-            <NavCard
-              key={card.id}
-              to={card.to}
-              image={card.image}
-              title={t(card.titleKey)}
-              kicker={t(card.kickerKey)}
-            />
+            <NavCard key={card.id} to={card.to} image={card.image} title={card.title} kicker={card.kicker} />
           ))}
 
           <NavCard

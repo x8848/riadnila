@@ -1,6 +1,15 @@
 export { Url } from './enums'
 import { Url } from './enums'
-import type { LanguageOption, MenuSection, NavCardItem, RestaurantMenuItem, Service, Treatment } from './types'
+import type {
+  Amenity,
+  LanguageOption,
+  MenuSection,
+  NavCardItem,
+  RestaurantMenuItem,
+  Service,
+  TranslateFn,
+  Treatment,
+} from './types'
 
 export const languages: LanguageOption[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -15,84 +24,84 @@ export const languages: LanguageOption[] = [
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
 ]
 
-export const navCards: NavCardItem[] = [
+export const getNavCards = (t: TranslateFn): NavCardItem[] => [
   {
     id: 'guest-info',
     to: Url.GuestInfo,
-    titleKey: 'guestInformation',
-    kickerKey: 'yourComfortAwaits',
+    title: t('guestInformation'),
+    kicker: t('yourComfortAwaits'),
     image: '/images/info.jpeg',
   },
   {
     id: 'restaurant',
     to: Url.Restaurant,
-    titleKey: 'restaurant',
-    kickerKey: 'flavoursOfMorocco',
+    title: t('restaurant'),
+    kicker: t('flavoursOfMorocco'),
     image: '/images/food.jpeg',
   },
   {
     id: 'spa',
     to: Url.Spa,
-    titleKey: 'spa',
-    kickerKey: 'wellnessServices',
+    title: t('spa'),
+    kicker: t('wellnessServices'),
     image: '/images/spa.jpeg',
   },
   {
     id: 'services',
     to: Url.Services,
-    titleKey: 'otherServices',
-    kickerKey: 'conciergeServices',
+    title: t('otherServices'),
+    kicker: t('conciergeServices'),
     image: '/images/rooftop.jpeg',
   },
   {
     id: 'about',
     to: Url.About,
-    titleKey: 'about',
-    kickerKey: 'ourStory',
+    title: t('about'),
+    kicker: t('ourStory'),
     image: '/images/about.jpeg',
   },
 ]
 
-export const restaurantMenus: RestaurantMenuItem[] = [
+export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
   {
     id: 'breakfast',
     to: Url.Breakfast,
-    titleKey: 'breakfast',
-    kickerKey: 'breakfastService',
-    descriptionKey: 'breakfastMenu',
+    title: t('breakfast'),
+    kicker: t('breakfastService'),
+    description: t('breakfastMenu'),
     image: '/images/breakfast.jpg',
     disabled: false,
   },
   {
     id: 'lunch-dinner',
     to: Url.Menu,
-    titleKey: 'lunchDinnerMenu',
-    kickerKey: 'flavoursOfMorocco',
-    descriptionKey: 'lunchDinnerMenu',
+    title: t('lunchDinnerMenu'),
+    kicker: t('flavoursOfMorocco'),
+    description: t('lunchDinnerMenu'),
     image: '/images/lunch.jpg',
     disabled: false,
   },
   {
     id: 'rooftop',
     to: Url.Rooftop,
-    titleKey: 'rooftopTerrace',
-    kickerKey: 'dessertsSweet',
-    descriptionKey: 'coolBright',
+    title: t('rooftopTerrace'),
+    kicker: t('dessertsSweet'),
+    description: t('coolBright'),
     image: '/images/rooftop.jpeg',
     disabled: false,
   },
   {
     id: 'cooking-class',
     to: '#',
-    titleKey: 'cookingClass',
-    kickerKey: 'notAvailable',
-    descriptionKey: 'notAvailable',
+    title: t('cookingClass'),
+    kicker: t('notAvailable'),
+    description: t('notAvailable'),
     image: '/images/food.jpeg',
     disabled: true,
   },
 ]
 
-export const getMenuSections = (t: (key: string) => string = k => k): MenuSection[] => [
+export const getMenuSections = (t: TranslateFn): MenuSection[] => [
   {
     title: t('soupsTraditionalStarters'),
     kicker: t('beginSoftly'),
@@ -249,7 +258,7 @@ export const getMenuSections = (t: (key: string) => string = k => k): MenuSectio
   },
 ]
 
-export const getRooftopMenuSections = (t: (key: string) => string = k => k): MenuSection[] => [
+export const getRooftopMenuSections = (t: TranslateFn): MenuSection[] => [
   {
     title: t('dessertsSweet'),
     kicker: t('sweetIndulgence'),
@@ -297,13 +306,13 @@ export const getRooftopMenuSections = (t: (key: string) => string = k => k): Men
   },
 ]
 
-export const getSpaTreatments = (t: (key: string) => string = k => k): Treatment[] => [
+export const getSpaTreatments = (t: TranslateFn): Treatment[] => [
   { name: t('hammamTradition'), duration: '60 min', price: '500 MAD', description: t('hammamTraditionDesc') },
   { name: t('massage'), duration: '60 min', price: '600 MAD', description: t('massageDesc') },
   { name: t('nilaRitual'), duration: '', price: '1000 MAD', description: t('nilaRitualDesc') },
 ]
 
-export const getServices = (t: (key: string) => string = k => k): Service[] => [
+export const getServices = (t: TranslateFn): Service[] => [
   {
     icon: '🧭',
     title: t('guidedCityTours'),
@@ -340,4 +349,11 @@ export const getServices = (t: (key: string) => string = k => k): Service[] => [
     description: t('culturalExperiencesDesc'),
     details: [t('cookingClasses'), t('traditionalCrafts'), t('musicSessions'), t('languageLessons')],
   },
+]
+
+export const getAmenities = (t: TranslateFn): Amenity[] => [
+  { icon: '🛜', title: t('freeWiFi'), description: t('highSpeedInternet') },
+  { icon: '🍽️', title: t('restaurant'), description: t('onSiteDining') },
+  { icon: '🚿', title: t('hotWater'), description: t('hotWaterSupply') },
+  { icon: '❄️', title: t('airConditioning'), description: t('climateControl') },
 ]

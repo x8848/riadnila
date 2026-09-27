@@ -1,11 +1,12 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
-import { restaurantMenus } from '@/utils'
+import { getRestaurantMenus } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function Restaurant() {
   const { t } = useLanguage()
+  const restaurantMenus = getRestaurantMenus(t)
 
   return (
     <div className="min-h-screen bg-sand">
@@ -25,8 +26,8 @@ export default function Restaurant() {
               key={menu.id}
               to={menu.to}
               image={menu.image}
-              title={t(menu.titleKey)}
-              kicker={t(menu.kickerKey)}
+              title={menu.title}
+              kicker={menu.kicker}
               disabled={menu.disabled}
             />
           ))}
