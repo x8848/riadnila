@@ -69,28 +69,22 @@ export default function Breakfast() {
           </div>
 
           {/* Important Note */}
-          <div className="bg-amber-50 border-l-4 border-gold p-3 rounded mb-4">
+          <div className="bg-amber-50 border-l-4 border-gold p-3 rounded">
             <p className="text-sm text-ink/80">
               <span className="font-semibold text-terracotta-deep">{t('important')}</span> {t('additionalFood')}
             </p>
           </div>
-
-          {/* Location */}
-          <div>
-            <p className="font-semibold text-ink mb-2">📍 {t('breakfastLocation')}:</p>
-            <p className="text-sm text-muted-foreground mb-2">{t('breakfastMay')}:</p>
-            <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-              <li>• {t('onTerrace')}</li>
-              <li>• {t('inRestaurant')}</li>
-            </ul>
-            <p className="text-sm text-muted-foreground mt-2">{t('pleaseNote')}</p>
-          </div>
         </div>
 
-        {/* Early Departure */}
+        {/* Breakfast Location */}
         <div className="section-card mb-4">
-          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('earlyDeparture')}</h3>
-          <p className="text-sm text-ink/80">{t('importantGuests')}</p>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('breakfastLocation')}</h3>
+          <p className="text-sm mb-2">{t('breakfastMay')}</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• {t('onTerrace')}</li>
+            <li>• {t('inRestaurant')}</li>
+          </ul>
+          <p className="text-sm mt-2">{t('pleaseNote')}</p>
         </div>
 
         {/* Service Hours */}
@@ -101,6 +95,12 @@ export default function Breakfast() {
               <span className="font-semibold">{t('breakfastServedBetween')}</span>
             </p>
           </div>
+        </div>
+
+        {/* Early Departure */}
+        <div className="section-card mb-4">
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('earlyDeparture')}</h3>
+          <p className="text-sm text-ink/80">{t('importantGuests')}</p>
         </div>
 
         {/* Book */}
