@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -12,7 +13,7 @@ export default function Services() {
     <div className="min-h-screen bg-sand">
       <Header title={t('otherServices')} heroImage="/images/rooftop.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('nilaServices')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('personalizedExperiences')}</h2>
@@ -21,14 +22,16 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="space-y-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {services.map((service, idx) => (
-            <div key={idx} className="section-card">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-lg leading-none">{service.icon}</span>
-                <h3 className="serif text-lg font-medium text-terracotta-deep">{service.title}</h3>
+            <div key={idx} className="section-card flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg leading-none">{service.icon}</span>
+                  <h3 className="serif text-lg font-medium text-terracotta-deep">{service.title}</h3>
+                </div>
+                <p className="text-sm text-ink/80 mb-3 leading-relaxed">{service.description}</p>
               </div>
-              <p className="text-sm text-ink/80 mb-3">{service.description}</p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 {service.details.map((detail, detailIdx) => (
                   <li key={detailIdx} className="flex items-center gap-2">
@@ -76,7 +79,7 @@ export default function Services() {
             label={t('contactUs')}
           />
         </div>
-      </section>
+      </Content>
 
       {/* Footer */}
       <Footer />

@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -13,7 +14,7 @@ export default function GuestInfo() {
     <div className="min-h-screen bg-sand">
       <Header title={t('guestInformation')} heroImage="/images/info.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('nila')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('yourComfortAwaits')}</h2>
@@ -22,10 +23,10 @@ export default function GuestInfo() {
         </div>
 
         {/* Amenities Grid */}
-        <div className="space-y-3 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {amenities.map((amenity, idx) => (
             <div key={idx} className="section-card">
-              <div className="flex gap-3">
+              <div className="flex gap-3 items-center">
                 <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-xl leading-none">
                   {amenity.icon}
                 </div>
@@ -176,7 +177,7 @@ export default function GuestInfo() {
           <p className="text-sm text-ink/80 mb-4">{t('contactConcierge')}</p>
           <WhatsAppButton href="https://wa.me/212662134431" label={t('contactUs')} />
         </div>
-      </section>
+      </Content>
 
       {/* Footer */}
       <Footer />

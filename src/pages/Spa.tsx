@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -13,7 +14,7 @@ export default function Spa() {
     <div className="min-h-screen bg-sand">
       <Header title={t('spa')} heroImage="/images/spa.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('nilaSpa')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('wellnessRelaxation')}</h2>
@@ -22,22 +23,24 @@ export default function Spa() {
         </div>
 
         {/* Treatments Grid */}
-        <div className="space-y-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {spaTreatments.map((treatment, idx) => (
-            <div key={idx} className="section-card">
-              <div className="flex items-start justify-between mb-2">
-                <h3 className="serif text-lg font-medium text-terracotta-deep flex-1">{treatment.name}</h3>
-                <p className="font-semibold text-gold ml-3 flex-shrink-0">{treatment.price}</p>
-              </div>
-              {treatment.duration && (
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {treatment.duration}
-                  </span>
+            <div key={idx} className="section-card flex flex-col justify-between">
+              <div>
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="serif text-lg font-medium text-terracotta-deep flex-1">{treatment.name}</h3>
+                  <p className="font-semibold text-gold ml-3 flex-shrink-0">{treatment.price}</p>
                 </div>
-              )}
-              <p className="text-sm text-ink/70">{treatment.description}</p>
+                {treatment.duration && (
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {treatment.duration}
+                    </span>
+                  </div>
+                )}
+                <p className="text-sm text-ink/70 leading-relaxed">{treatment.description}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -50,10 +53,12 @@ export default function Spa() {
               <h3 className="serif text-lg font-medium text-terracotta-deep mb-2">{t('importantReservation')}</h3>
               <div className="space-y-2 text-sm text-ink/80">
                 <p>
-                  <span className="font-semibold">⏰ {t('spaAdvanceBookingNotice')}</span> {t('spaAdvanceBookingNoticeDesc')}
+                  <span className="font-semibold">⏰ {t('spaAdvanceBookingNotice')}</span>{' '}
+                  {t('spaAdvanceBookingNoticeDesc')}
                 </p>
                 <p>
-                  <span className="font-semibold">🕘 {t('spaOperatingHoursNotice')}</span> {t('spaOperatingHoursNoticeDesc')}
+                  <span className="font-semibold">🕘 {t('spaOperatingHoursNotice')}</span>{' '}
+                  {t('spaOperatingHoursNoticeDesc')}
                 </p>
                 <p>
                   <span className="font-semibold">👥 {t('spaCapacityNotice')}</span> {t('spaCapacityNoticeDesc')}
@@ -99,7 +104,7 @@ export default function Spa() {
             label={t('bookNow')}
           />
         </div>
-      </section>
+      </Content>
 
       {/* Footer */}
       <Footer />

@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -11,7 +12,7 @@ export default function About() {
     <div className="min-h-screen bg-sand">
       <Header title={t('aboutRiad')} heroImage="/images/about.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('riadNilaAbout')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('riadNila')}</h2>
@@ -26,45 +27,39 @@ export default function About() {
         </div>
 
         {/* Values */}
-        <div className="space-y-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="section-card">
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Heart className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('authenticHospitality')}</h3>
-                <p className="text-sm text-ink/70">
-                  {t('authenticHospitalityDesc')}
-                </p>
+                <p className="text-sm text-ink/70 leading-relaxed">{t('authenticHospitalityDesc')}</p>
               </div>
             </div>
           </div>
 
           <div className="section-card">
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Home className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('respectfulRestoration')}</h3>
-                <p className="text-sm text-ink/70">
-                  {t('respectfulRestorationDesc')}
-                </p>
+                <p className="text-sm text-ink/70 leading-relaxed">{t('respectfulRestorationDesc')}</p>
               </div>
             </div>
           </div>
 
           <div className="section-card">
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-olive">
                 <Users className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="serif text-lg font-medium text-terracotta-deep mb-1">{t('communityConnection')}</h3>
-                <p className="text-sm text-ink/70">
-                  {t('communityConnectionDesc')}
-                </p>
+                <p className="text-sm text-ink/70 leading-relaxed">{t('communityConnectionDesc')}</p>
               </div>
             </div>
           </div>
@@ -76,27 +71,19 @@ export default function About() {
           <div className="space-y-3 text-sm">
             <div>
               <p className="font-semibold text-ink mb-1">{t('accommodations')}</p>
-              <p className="text-muted-foreground">
-                {t('accommodationsDesc')}
-              </p>
+              <p className="text-muted-foreground">{t('accommodationsDesc')}</p>
             </div>
             <div>
               <p className="font-semibold text-ink mb-1">{t('commonSpaces')}</p>
-              <p className="text-muted-foreground">
-                {t('commonSpacesDesc')}
-              </p>
+              <p className="text-muted-foreground">{t('commonSpacesDesc')}</p>
             </div>
             <div>
               <p className="font-semibold text-ink mb-1">{t('dining')}</p>
-              <p className="text-muted-foreground">
-                {t('diningDesc')}
-              </p>
+              <p className="text-muted-foreground">{t('diningDesc')}</p>
             </div>
             <div>
               <p className="font-semibold text-ink mb-1">{t('wellness')}</p>
-              <p className="text-muted-foreground">
-                {t('wellnessDesc')}
-              </p>
+              <p className="text-muted-foreground">{t('wellnessDesc')}</p>
             </div>
           </div>
         </div>
@@ -137,7 +124,7 @@ export default function About() {
             label={t('contactUs')}
           />
         </div>
-      </section>
+      </Content>
 
       {/* Footer */}
       <Footer />

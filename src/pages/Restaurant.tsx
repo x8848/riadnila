@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
@@ -12,7 +13,7 @@ export default function Restaurant() {
     <div className="min-h-screen bg-sand">
       <Header title={t('restaurant')} heroImage="/images/food.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('nila')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('nilaRestaurant')}</h2>
@@ -32,7 +33,7 @@ export default function Restaurant() {
             />
           ))}
         </div>
-      </section>
+      </Content>
 
       <Footer />
     </div>

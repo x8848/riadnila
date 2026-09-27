@@ -106,7 +106,7 @@ export default function QRCodePrint() {
         <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
           <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Restaurant Menu</h2>
           <p className="text-sm text-ink/70 mb-6 max-w-xs">
-            Scan to view traditional Moroccan tagines, couscous, desserts, and rooftop beverage selections.
+            Scan to view traditional Moroccan tagines, couscous, desserts, and beverages.
           </p>
 
           <div
@@ -147,7 +147,7 @@ export default function QRCodePrint() {
       </div>
 
       {/* Print Instructions footer - No print */}
-      <div className="no-print text-center text-sm text-ink/60 max-w-md">
+      <div className="no-print text-center text-sm text-ink/60 w-full max-w-5xl">
         <p>Tip: Click "Print QR Codes" to print both cards cleanly on an A4 sheet for tables or reception.</p>
       </div>
 

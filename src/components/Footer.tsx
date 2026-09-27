@@ -86,7 +86,7 @@ export default function Footer() {
               <QrCode className="w-3.5 h-3.5" />
             </Link>
           </p>
-          <p className="mt-1">{t('tagline')}</p>
+          <p className="mt-1 text-xs">{t('tagline')}</p>
         </div>
       </div>
     </footer>

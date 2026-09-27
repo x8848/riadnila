@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
@@ -14,7 +15,7 @@ export default function Home() {
       <Header subtitle={t('tagline')} heroImage="/images/info.jpeg" />
 
       {/* Content Section */}
-      <section className="px-5 py-7 pb-8">
+      <Content className="pb-8">
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('yourStayWithUs')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('discoverRiadNila')}</h2>
@@ -35,7 +36,7 @@ export default function Home() {
             className="lg:h-40"
           />
         </div>
-      </section>
+      </Content>
 
       {/* Footer */}
       <Footer />

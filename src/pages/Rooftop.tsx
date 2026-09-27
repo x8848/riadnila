@@ -1,3 +1,4 @@
+import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -12,7 +13,7 @@ export default function Rooftop() {
     <div className="min-h-screen bg-sand">
       <Header title={t('rooftopTerrace')} heroImage="/images/rooftop.jpeg" />
 
-      <section className="px-5 py-7">
+      <Content>
         <div className="mb-6">
           <p className="eyebrow mb-2">{t('panoramicViews')}</p>
           <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('rooftopExperience')}</h2>
@@ -64,7 +65,7 @@ export default function Rooftop() {
             label={t('bookNow')}
           />
         </div>
-      </section>
+      </Content>
 
       <Footer />
     </div>
