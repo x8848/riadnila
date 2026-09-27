@@ -94,3 +94,9 @@ export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
 }
+
+export interface MenuSectionCardProps {
+  section: MenuSection
+  showKicker?: boolean
+  className?: string
+}

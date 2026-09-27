@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import MenuSectionCard from '@/components/MenuSectionCard'
 import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getRooftopMenuSections } from '@/utils'
@@ -25,26 +26,7 @@ export default function Rooftop() {
         {/* Menu Sections */}
         <div className="space-y-6">
           {menuSections.map((section, idx) => (
-            <div key={idx} className="section-card">
-              <div className="mb-4">
-                <p className="eyebrow mb-2">
-                  {section.symbol} {section.kicker}
-                </p>
-                <h3 className="serif text-2xl font-medium text-terracotta-deep">{section.title}</h3>
-              </div>
-
-              <div className="menu-section">
-                {section.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="menu-item">
-                    <div className="dish-line">
-                      <h4 className="dish-name">{item.name}</h4>
-                      <p className="dish-price">{item.price}</p>
-                    </div>
-                    {item.description && <p className="dish-desc">{item.description}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <MenuSectionCard key={idx} section={section} showKicker />
           ))}
         </div>
 

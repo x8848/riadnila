@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import MenuSectionCard from '@/components/MenuSectionCard'
 import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getMenuSections } from '@/utils'
@@ -23,28 +24,9 @@ export default function Menu() {
         </div>
 
         {/* Menu Sections */}
-        <div className="space-y-8 mb-8">
+        <div className="space-y-6 mb-8">
           {menuSections.map((section, sectionIdx) => (
-            <div key={sectionIdx}>
-              <div className="mb-4">
-                <p className="eyebrow text-sm mb-1">
-                  {section.symbol} {section.kicker.toUpperCase()}
-                </p>
-                <h3 className="serif text-2xl font-medium text-terracotta-deep">{section.title}</h3>
-              </div>
-
-              <div className="space-y-4">
-                {section.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="section-card">
-                    <div className="flex justify-between items-start gap-3 mb-2">
-                      <h4 className="serif text-lg font-medium text-terracotta-deep flex-1">{item.name}</h4>
-                      <p className="text-terracotta font-semibold text-sm whitespace-nowrap">{item.price}</p>
-                    </div>
-                    {item.description && <p className="text-sm text-ink/70 leading-relaxed">{item.description}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <MenuSectionCard key={sectionIdx} section={section} showKicker />
           ))}
         </div>
 
