@@ -73,7 +73,7 @@
   "omelette": "Frittata",
   "sharedFruit": "FRUTTA CONDIVISA:",
   "mixedFruitPlate": "Un piatto di frutta mista servito per due persone.",
-  "traditionalMoroccan": "ELEMENTI TRADIZIONALI DELLA COLAZIONE MAROCCHINA:",
+  "traditionalMoroccan": "COLAZIONE TRADIZIONALE MAROCCHINA:",
   "msemen": "Msemen (Crepes Marocchine)",
   "moroccanBread": "Pane Marocchino",
   "olives": "Olive",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Spaghetti alle Erbe di Provenza",
   "spaghettiProvencalHerbsDescription": "Spaghetti conditi con olio d’oliva, aglio e una miscela di erbe di Provenza.",
   "bookOnline": "Prenota online",
-  "directBooking": "Prenotazione diretta"
+  "directBooking": "Prenotazione diretta",
+  "pageNotFound": "Pagina Non Trovata",
+  "goBack": "Indietro",
+  "homePage": "Pagina Principale"
 }

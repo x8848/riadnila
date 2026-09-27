@@ -1,11 +1,15 @@
+import { Url } from '@/utils/enums'
+import { Download, Printer } from 'lucide-react'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useRef } from 'react'
-import { Download, Printer } from 'lucide-react'
+
+const DOMAIN = 'https://riadnila.com'
+const MENU_URL = `${DOMAIN}${Url.LunchDinner}`
 
 export default function QRCodePrint() {
   const qrRef = useRef<HTMLDivElement>(null)
 
-  const appUrl = typeof window !== 'undefined' ? window.location.origin : 'https://riadnila.com'
+  const url = typeof window !== 'undefined' ? window.location.origin : MENU_URL
 
   const downloadQR = () => {
     const canvas = qrRef.current?.querySelector('canvas')
@@ -33,7 +37,7 @@ export default function QRCodePrint() {
       <div className="bg-white rounded-2xl shadow-2xl p-12 max-w-md w-full">
         {/* QR Code */}
         <div ref={qrRef} className="bg-white p-8 rounded-lg flex justify-center mb-8 border-2 border-gray-100">
-          <QRCodeCanvas value={appUrl} size={280} level="H" includeMargin={true} fgColor="#000000" bgColor="#ffffff" />
+          <QRCodeCanvas value={url} size={280} level="H" includeMargin={true} fgColor="#000000" bgColor="#ffffff" />
         </div>
 
         {/* Instructions */}
@@ -45,7 +49,7 @@ export default function QRCodePrint() {
         {/* URL Display */}
         <div className="bg-gray-50 p-4 rounded-lg mb-8 text-center">
           <p className="text-xs text-gray-600 mb-1">Or visit:</p>
-          <p className="text-sm font-mono text-terracotta-deep break-all">{appUrl}</p>
+          <p className="text-sm font-mono text-terracotta-deep break-all">{url}</p>
         </div>
 
         {/* Action Buttons */}

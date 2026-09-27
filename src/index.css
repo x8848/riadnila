@@ -67,7 +67,7 @@
 
 @layer components {
   .nav-card {
-    @apply relative min-h-32 rounded-2xl overflow-hidden shadow-lg border border-white/20 transition-all duration-300 ease-out text-left w-full isolate;
+    @apply relative min-h-32 rounded-2xl overflow-hidden shadow-lg border border-white/20 transition-all duration-300 ease-out text-left w-full isolate flex items-center;
   }
 
   .nav-card:hover {

@@ -174,7 +174,6 @@ export default function GuestInfo() {
           >
             <Phone className="w-5 h-5 text-olive" />
             <div>
-              <p className="text-xs text-muted-foreground">Phone</p>
               <p className="font-semibold text-ink">+212 662 134 431</p>
             </div>
           </a>

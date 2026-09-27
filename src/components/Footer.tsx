@@ -4,6 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-transparent to-black/80 py-8 px-6 text-white">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
+        {/* Divider */}
+        {/* <div className="border-t border-white/20 mb-6 w-full" /> */}
+
         {/* Social Media Links */}
         <div className="flex justify-center gap-6 mb-6">
           {/* Instagram */}
@@ -66,9 +69,6 @@ export default function Footer() {
             <span className="text-sm hidden sm:inline">TripAdvisor</span>
           </a>
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-white/20 my-4 w-full" />
 
         {/* Copyright */}
         <div className="text-center text-sm text-white/60">

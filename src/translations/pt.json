@@ -73,7 +73,7 @@
   "omelette": "Omelete",
   "sharedFruit": "FRUTAS COMPARTILHADAS:",
   "mixedFruitPlate": "Um prato de frutas mistas servido para duas pessoas.",
-  "traditionalMoroccan": "ITENS TRADICIONAIS DO CAFÉ DA MANHÃ MARROQUINO:",
+  "traditionalMoroccan": "CAFÉ DA MANHÃ TRADICIONAL MARROQUINO:",
   "msemen": "Msemen (Panquecas Marroquinas)",
   "moroccanBread": "Pão Marroquino",
   "olives": "Azeitonas",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Esparguete com Ervas Provençais",
   "spaghettiProvencalHerbsDescription": "Esparguete envolvido em azeite, alho e uma mistura de ervas provençais.",
   "bookOnline": "Reservar online",
-  "directBooking": "Reserva direta"
+  "directBooking": "Reserva direta",
+  "pageNotFound": "Página Não Encontrada",
+  "goBack": "Voltar",
+  "homePage": "Página Inicial"
 }

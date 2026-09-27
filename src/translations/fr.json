@@ -73,7 +73,7 @@
   "omelette": "Omelette",
   "sharedFruit": "FRUITS PARTAGÉS:",
   "mixedFruitPlate": "Un plateau de fruits mélangés servi pour deux personnes.",
-  "traditionalMoroccan": "ÉLÉMENTS TRADITIONNELS DU PETIT-DÉJEUNER MAROCAIN:",
+  "traditionalMoroccan": "PETIT-DÉJEUNER TRADITIONNEL MAROCAIN:",
   "msemen": "Msemen (Crêpes Marocaines)",
   "moroccanBread": "Pain Marocain",
   "olives": "Olives",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Spaghetti aux Herbes de Provence",
   "spaghettiProvencalHerbsDescription": "Spaghetti mélangés à de l’huile d’olive, de l’ail et un mélange d’herbes de Provence.",
   "bookOnline": "Réserver en ligne",
-  "directBooking": "Réservation directe"
+  "directBooking": "Réservation directe",
+  "pageNotFound": "Page Non Trouvée",
+  "goBack": "Retour",
+  "homePage": "Page d'Accueil"
 }

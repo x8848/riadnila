@@ -73,7 +73,7 @@
   "omelette": "عجة",
   "sharedFruit": "الفاكهة المشتركة:",
   "mixedFruitPlate": "طبق من الفاكهة المختلطة يُقدم لشخصين.",
-  "traditionalMoroccan": "عناصر الإفطار التقليدية المغربية:",
+  "traditionalMoroccan": "الإفطار المغربي التقليدي:",
   "msemen": "مسمن (فطائر مغربية)",
   "moroccanBread": "خبز مغربي",
   "olives": "زيتون",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "سباغيتي بأعشاب بروفانس",
   "spaghettiProvencalHerbsDescription": "سباغيتي مع زيت الزيتون والثوم ومزيج من أعشاب بروفانس.",
   "bookOnline": "احجز عبر الإنترنت",
-  "directBooking": "حجز مباشر"
+  "directBooking": "حجز مباشر",
+  "pageNotFound": "الصفحة غير موجودة",
+  "goBack": "رجوع",
+  "homePage": "الصفحة الرئيسية"
 }

@@ -73,7 +73,7 @@
   "omelette": "Omelet",
   "sharedFruit": "GEDEELD FRUIT:",
   "mixedFruitPlate": "Een bord gemengd fruit geserveerd voor twee personen.",
-  "traditionalMoroccan": "TRADITIONELE MAROKKAANSE ONTBIJTARTIKELEN:",
+  "traditionalMoroccan": "TRADITIONEEL MAROKKAANS ONTBIJT:",
   "msemen": "Msemen (Marokkaanse Pannenkoeken)",
   "moroccanBread": "Marokkaans Brood",
   "olives": "Olijven",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Spaghetti met Provençaalse Kruiden",
   "spaghettiProvencalHerbsDescription": "Spaghetti met olijfolie, knoflook en een mengsel van Provençaalse kruiden.",
   "bookOnline": "Online boeken",
-  "directBooking": "Direct boeken"
+  "directBooking": "Direct boeken",
+  "pageNotFound": "Pagina Niet Gevonden",
+  "goBack": "Terug",
+  "homePage": "Startpagina"
 }

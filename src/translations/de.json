@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Spaghetti mit Kräutern der Provence",
   "spaghettiProvencalHerbsDescription": "Spaghetti geschwenkt in erstklassigem Olivenöl, Knoblauch und provenzalischen Kräutern.",
   "bookOnline": "Online buchen",
-  "directBooking": "Direktbuchung"
+  "directBooking": "Direktbuchung",
+  "pageNotFound": "Seite Nicht Gefunden",
+  "goBack": "Zurück",
+  "homePage": "Startseite"
 }

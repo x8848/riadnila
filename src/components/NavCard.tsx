@@ -5,7 +5,7 @@ export default function NavCard({ image, title, kicker, to, href, disabled, clas
   const content = (
     <>
       <img src={image} alt={title} />
-      <div className="relative z-10 flex items-center justify-between p-5 h-full">
+      <div className="relative z-10 flex flex-1 items-center justify-between p-5 w-full">
         <div className="text-left">
           <p className="text-xs font-medium uppercase tracking-wider text-white/70 mb-1">{kicker}</p>
           <h3 className="serif text-2xl font-medium text-white">{title}</h3>
@@ -15,19 +15,19 @@ export default function NavCard({ image, title, kicker, to, href, disabled, clas
   )
 
   if (disabled) {
-    return <div className={`nav-card block opacity-60 cursor-not-allowed ${className}`}>{content}</div>
+    return <div className={`nav-card flex items-center opacity-60 cursor-not-allowed ${className}`}>{content}</div>
   }
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={`nav-card group block ${className}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`nav-card group flex items-center ${className}`}>
         {content}
       </a>
     )
   }
 
   return (
-    <Link to={to!} className={`nav-card group block ${className}`}>
+    <Link to={to!} className={`nav-card group flex items-center ${className}`}>
       {content}
     </Link>
   )

@@ -1,4 +1,5 @@
 import type { LanguageOption, MenuSection, NavCardItem, RestaurantMenuItem, Treatment } from './types'
+import { Url } from './enums'
 
 export const languages: LanguageOption[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -198,7 +199,7 @@ export const navCards: NavCardItem[] = [
 export const restaurantMenus: RestaurantMenuItem[] = [
   {
     id: 'breakfast',
-    to: '/restaurant/breakfast',
+    to: Url.Breakfast,
     titleKey: 'breakfast',
     kickerKey: 'breakfastService',
     descriptionKey: 'breakfastMenu',
@@ -207,7 +208,7 @@ export const restaurantMenus: RestaurantMenuItem[] = [
   },
   {
     id: 'lunch-dinner',
-    to: '/restaurant/lunch-dinner',
+    to: Url.LunchDinner,
     titleKey: 'lunchDinnerMenu',
     kickerKey: 'flavoursOfMorocco',
     descriptionKey: 'lunchDinnerMenu',
@@ -216,7 +217,7 @@ export const restaurantMenus: RestaurantMenuItem[] = [
   },
   {
     id: 'rooftop',
-    to: '/restaurant/rooftop',
+    to: Url.Rooftop,
     titleKey: 'rooftopTerrace',
     kickerKey: 'dessertsSweet',
     descriptionKey: 'coolBright',

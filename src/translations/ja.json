@@ -73,7 +73,7 @@
   "omelette": "オムレツ",
   "sharedFruit": "フルーツ盛り合わせ:",
   "mixedFruitPlate": "季節のフルーツ盛り合わせ（2名様ごとに1皿ご提供いたします）。",
-  "traditionalMoroccan": "モロッコ伝統の朝食プレート:",
+  "traditionalMoroccan": "モロッコ伝統の朝食:",
   "msemen": "ムセンメン（モロッコ風パイ生地クレープ）",
   "moroccanBread": "モロッカンブレッド（焼きたてパン）",
   "olives": "オリーブ",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "プロヴァンス風ハーブのオイルスパゲッティ",
   "spaghettiProvencalHerbsDescription": "上質なオリーブオイルと香ばしいニンニク、香り豊かなハーブでシンプルに仕上げたスパゲッティ。",
   "bookOnline": "オンライン予約",
-  "directBooking": "公式サイト直接予約"
+  "directBooking": "公式サイト直接予約",
+  "pageNotFound": "ページが見つかりません",
+  "goBack": "戻る",
+  "homePage": "ホームページ"
 }

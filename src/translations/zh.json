@@ -73,7 +73,7 @@
   "omelette": "煎蛋卷",
   "sharedFruit": "共享水果：",
   "mixedFruitPlate": "每两人提供一份混合水果盘。",
-  "traditionalMoroccan": "传统摩洛哥早餐项目：",
+  "traditionalMoroccan": "传统摩洛哥早餐：",
   "msemen": "姆斯门（摩洛哥薄饼）",
   "moroccanBread": "摩洛哥面包",
   "olives": "橄榄",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "普罗旺斯香草意大利面",
   "spaghettiProvencalHerbsDescription": "意大利面拌以橄榄油、大蒜和普罗旺斯香草混合调味。",
   "bookOnline": "在线预订",
-  "directBooking": "直接预订"
+  "directBooking": "直接预订",
+  "pageNotFound": "页面未找到",
+  "goBack": "返回",
+  "homePage": "首页"
 }

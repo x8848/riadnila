@@ -73,7 +73,7 @@
   "omelette": "Tortilla",
   "sharedFruit": "FRUTAS COMPARTIDAS:",
   "mixedFruitPlate": "Un plato de frutas mixtas servido para dos personas.",
-  "traditionalMoroccan": "ELEMENTOS TRADICIONALES DEL DESAYUNO MARROQUÍ:",
+  "traditionalMoroccan": "DESAYUNO TRADICIONAL MARROQUÍ:",
   "msemen": "Msemen (Crepes Marroquíes)",
   "moroccanBread": "Pan Marroquí",
   "olives": "Aceitunas",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Espaguetis con Hierbas Provenzales",
   "spaghettiProvencalHerbsDescription": "Espaguetis salteados con aceite de oliva, ajo y una mezcla de hierbas provenzales.",
   "bookOnline": "Reservar en línea",
-  "directBooking": "Reserva directa"
+  "directBooking": "Reserva directa",
+  "pageNotFound": "Página No Encontrada",
+  "goBack": "Volver",
+  "homePage": "Página Principal"
 }

@@ -73,7 +73,7 @@
   "omelette": "Omelette",
   "sharedFruit": "SHARED FRUIT:",
   "mixedFruitPlate": "One mixed fruit plate served for every two guests.",
-  "traditionalMoroccan": "TRADITIONAL MOROCCAN BREAKFAST ITEMS:",
+  "traditionalMoroccan": "TRADITIONAL MOROCCAN BREAKFAST:",
   "msemen": "Msemen (Moroccan pancakes)",
   "moroccanBread": "Moroccan Bread",
   "olives": "Olives",
@@ -182,5 +182,8 @@
   "spaghettiProvencalHerbs": "Spaghetti with Provençal Herbs",
   "spaghettiProvencalHerbsDescription": "Spaghetti tossed with olive oil, garlic, and a blend of Provençal herbs.",
   "bookOnline": "Book Online",
-  "directBooking": "Direct Booking"
+  "directBooking": "Direct Booking",
+  "pageNotFound": "Page Not Found",
+  "goBack": "Go Back",
+  "homePage": "Home Page"
 }
