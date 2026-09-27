@@ -100,3 +100,10 @@ export interface MenuSectionCardProps {
   showKicker?: boolean
   className?: string
 }
+
+export interface QRCardProps {
+  title: string
+  description: string
+  url: string
+  filename: string
+}

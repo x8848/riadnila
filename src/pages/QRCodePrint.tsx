@@ -1,8 +1,7 @@
 import Page from '@/components/Page'
+import QRCard from '@/components/QRCard'
 import { Url } from '@/utils/enums'
-import { ArrowLeft, Download, Printer } from 'lucide-react'
-import { QRCodeCanvas } from 'qrcode.react'
-import { useRef } from 'react'
+import { ArrowLeft, Printer } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const HOME_URL = 'https://riadnila.com'
@@ -10,18 +9,6 @@ const MENU_URL = `${HOME_URL}${Url.Menu}`
 
 export default function QRCodePrint() {
   const navigate = useNavigate()
-  const homeQrRef = useRef<HTMLDivElement>(null)
-  const menuQrRef = useRef<HTMLDivElement>(null)
-
-  const downloadQR = (ref: React.RefObject<HTMLDivElement | null>, filename: string) => {
-    const canvas = ref.current?.querySelector('canvas')
-    if (canvas) {
-      const link = document.createElement('a')
-      link.href = canvas.toDataURL('image/png')
-      link.download = filename
-      link.click()
-    }
-  }
 
   const printQR = () => {
     window.print()
@@ -60,91 +47,19 @@ export default function QRCodePrint() {
 
       {/* QR Code Cards Grid */}
       <div className="qr-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10">
-        {/* QR 1: Guest Information */}
-        <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
-          <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Guest Information</h2>
-          <p className="text-sm text-ink/70 mb-6 max-w-xs">
-            Scan to access riad information, amenities, spa treatments, and concierge services.
-          </p>
+        <QRCard
+          title="Guest Information"
+          description="Scan to access riad information, amenities, spa treatments, and concierge services."
+          url={HOME_URL}
+          filename="riad-nila-info-qr.png"
+        />
 
-          <div
-            ref={homeQrRef}
-            className="bg-white p-5 rounded-xl border-2 border-stone-100 shadow-inner flex items-center justify-center mb-6"
-          >
-            <QRCodeCanvas
-              value={HOME_URL}
-              size={230}
-              level="H"
-              includeMargin={true}
-              fgColor="#1f1815"
-              bgColor="#ffffff"
-            />
-          </div>
-
-          <a
-            href={HOME_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-print group bg-sand/60 hover:bg-sand border border-stone-200/80 hover:border-terracotta-deep/30 px-4 py-2.5 rounded-xl mb-6 w-full block transition-colors text-center"
-          >
-            <p className="text-sm font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
-              {HOME_URL}
-            </p>
-          </a>
-
-          <div className="no-print w-full">
-            <button
-              onClick={() => downloadQR(homeQrRef, 'riad-nila-home-qr.png')}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              Download QR Code
-            </button>
-          </div>
-        </div>
-
-        {/* QR 2: Lunch & Dinner Menu */}
-        <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
-          <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">Lunch & Dinner Menu</h2>
-          <p className="text-sm text-ink/70 mb-6 max-w-xs">
-            Scan to view traditional Moroccan tagines, couscous, desserts, and beverages.
-          </p>
-
-          <div
-            ref={menuQrRef}
-            className="bg-white p-5 rounded-xl border-2 border-stone-100 shadow-inner flex items-center justify-center mb-6"
-          >
-            <QRCodeCanvas
-              value={MENU_URL}
-              size={230}
-              level="H"
-              includeMargin={true}
-              fgColor="#1f1815"
-              bgColor="#ffffff"
-            />
-          </div>
-
-          <a
-            href={MENU_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-print group bg-sand/60 hover:bg-sand border border-stone-200/80 hover:border-terracotta-deep/30 px-4 py-2.5 rounded-xl mb-6 w-full block transition-colors text-center"
-          >
-            <p className="text-sm font-mono font-medium text-terracotta-deep break-all underline-offset-2 group-hover:underline">
-              {MENU_URL}
-            </p>
-          </a>
-
-          <div className="no-print w-full">
-            <button
-              onClick={() => downloadQR(menuQrRef, 'riad-nila-menu-qr.png')}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              Download QR Code
-            </button>
-          </div>
-        </div>
+        <QRCard
+          title="Lunch & Dinner Menu"
+          description="Scan to view traditional Moroccan tagines, couscous, desserts, and beverages."
+          url={MENU_URL}
+          filename="riad-nila-menu-qr.png"
+        />
       </div>
 
       {/* Print Instructions footer - No print */}

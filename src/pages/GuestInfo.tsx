@@ -28,9 +28,7 @@ export default function GuestInfo() {
           {amenities.map((amenity, idx) => (
             <div key={idx} className="section-card">
               <div className="flex gap-3 items-center">
-                <div className="w-10 h-10 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 text-xl leading-none">
-                  {amenity.icon}
-                </div>
+                <span className="text-2xl leading-none flex-shrink-0">{amenity.icon}</span>
                 <div>
                   <h3 className="font-semibold text-ink text-sm">{amenity.title}</h3>
                   <p className="text-sm text-muted-foreground">{amenity.description}</p>
