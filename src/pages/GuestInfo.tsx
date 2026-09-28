@@ -5,7 +5,6 @@ import Page from '@/components/Page'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { getAmenities } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
-import { Phone } from 'lucide-react'
 
 export default function GuestInfo() {
   const { t } = useLanguage()
@@ -160,15 +159,12 @@ export default function GuestInfo() {
 
         {/* Contact Information */}
         <div className="section-card">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">📞</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('contact')}</h3>
-          </div>
+          <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('contactUs')}</h3>
           <a
             href="tel:+212662134431"
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors mb-3"
           >
-            <Phone className="w-5 h-5 text-olive" />
+            <span className="text-lg leading-none">📞</span>
             <div>
               <p className="font-semibold text-ink">+212 662 134 431</p>
             </div>
