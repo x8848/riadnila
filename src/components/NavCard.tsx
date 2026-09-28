@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function NavCard({ image, title, kicker, to, href, disabled, className = '' }: NavCardProps) {
   const content = (
     <>
-      <img src={image} alt={title} />
+      <img src={image} alt={title} loading="lazy" decoding="async" />
       <div className="relative z-10 flex flex-1 items-center justify-between p-5 w-full">
         <div className="text-left">
           <p className="text-sm font-medium uppercase tracking-wider text-white/80 mb-1">{kicker}</p>

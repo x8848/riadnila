@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <Page dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      <Header subtitle={t('tagline')} heroImage="/images/info.jpeg" />
+      <Header subtitle={t('tagline')} heroImage="/images/info.webp" />
 
       <Content className="pb-8">
         <div className="mb-6">
@@ -28,7 +28,7 @@ export default function Home() {
 
           <NavCard
             href={OCTORATE_URL}
-            image="/images/booking.jpeg"
+            image="/images/booking.webp"
             title={t('bookOnline')}
             kicker={t('directBooking')}
             className="lg:h-40"

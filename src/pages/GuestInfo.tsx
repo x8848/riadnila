@@ -13,7 +13,7 @@ export default function GuestInfo() {
 
   return (
     <Page>
-      <Header title={t('guestInformation')} heroImage="/images/info.jpeg" />
+      <Header title={t('guestInformation')} heroImage="/images/info.webp" />
 
       <Content>
         <div className="mb-6">

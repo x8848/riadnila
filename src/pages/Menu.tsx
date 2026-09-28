@@ -13,7 +13,7 @@ export default function Menu() {
 
   return (
     <Page>
-      <Header title={t('lunchDinnerMenu')} heroImage="/images/lunch.jpg" />
+      <Header title={t('lunchDinnerMenu')} heroImage="/images/lunch.webp" />
 
       <Content>
         <div className="mb-6">

@@ -13,7 +13,7 @@ export default function Rooftop() {
 
   return (
     <Page>
-      <Header title={t('rooftopTerrace')} heroImage="/images/rooftop.jpeg" />
+      <Header title={t('rooftopTerrace')} heroImage="/images/rooftop.webp" />
 
       <Content>
         <div className="mb-6">

@@ -14,7 +14,15 @@ export default function Header({ title, subtitle, showBack, heroImage }: HeaderP
     <section className="hero-section relative z-30">
       {/* Curved Hero Background */}
       <div className="absolute inset-0 overflow-hidden rounded-b-[44%_10%] pointer-events-none">
-        {heroImage && <img src={heroImage} alt="" className="hero-bg absolute inset-0 w-full h-full object-cover" />}
+        {heroImage && (
+          <img
+            src={heroImage}
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="hero-bg absolute inset-0 w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/75" />
       </div>
 

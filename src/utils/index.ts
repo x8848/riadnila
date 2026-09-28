@@ -32,28 +32,28 @@ export const getNavCards = (t: TranslateFn): NavCardItem[] => [
     to: Url.GuestInfo,
     title: t('guestInformation'),
     kicker: t('yourComfortAwaits'),
-    image: '/images/info.jpeg',
+    image: '/images/info.webp',
   },
   {
     id: 'restaurant',
     to: Url.Restaurant,
     title: t('restaurant'),
     kicker: t('flavoursOfMorocco'),
-    image: '/images/food.jpeg',
+    image: '/images/food.webp',
   },
   {
     id: 'spa',
     to: Url.Spa,
     title: t('spa'),
     kicker: t('wellnessRelaxation'),
-    image: '/images/spa.jpeg',
+    image: '/images/spa.webp',
   },
   {
     id: 'services',
     to: Url.Services,
     title: t('otherServices'),
     kicker: t('personalizedExperiences'),
-    image: '/images/rooftop.jpeg',
+    image: '/images/rooftop.webp',
   },
   {
     id: 'gallery',
@@ -67,7 +67,7 @@ export const getNavCards = (t: TranslateFn): NavCardItem[] => [
     to: Url.About,
     title: t('about'),
     kicker: t('ourStory'),
-    image: '/images/about.jpeg',
+    image: '/images/about.webp',
   },
 ]
 
@@ -80,7 +80,7 @@ export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
     title: t('breakfast'),
     kicker: t('breakfastService'),
     description: t('breakfastMenu'),
-    image: '/images/breakfast.jpg',
+    image: '/images/breakfast.webp',
     disabled: false,
   },
   {
@@ -89,7 +89,7 @@ export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
     title: t('lunchDinnerMenu'),
     kicker: t('flavoursOfMorocco'),
     description: t('lunchDinnerMenu'),
-    image: '/images/lunch.jpg',
+    image: '/images/lunch.webp',
     disabled: false,
   },
   {
@@ -98,7 +98,7 @@ export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
     title: t('rooftopTerrace'),
     kicker: t('rooftopExperience'),
     description: t('coolBright'),
-    image: '/images/rooftop.jpeg',
+    image: '/images/rooftop.webp',
     disabled: false,
   },
   {
@@ -107,7 +107,7 @@ export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
     title: t('cookingClass'),
     kicker: t('notAvailable'),
     description: t('notAvailable'),
-    image: '/images/food.jpeg',
+    image: '/images/food.webp',
     disabled: true,
   },
 ]

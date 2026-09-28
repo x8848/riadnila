@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <Page>
-      <Header title={t('about')} heroImage="/images/about.jpeg" />
+      <Header title={t('about')} heroImage="/images/about.webp" />
 
       <Content>
         <div className="mb-6">

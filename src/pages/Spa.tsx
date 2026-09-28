@@ -13,7 +13,7 @@ export default function Spa() {
 
   return (
     <Page>
-      <Header title={t('spa')} heroImage="/images/spa.jpeg" />
+      <Header title={t('spa')} heroImage="/images/spa.webp" />
 
       <Content>
         <div className="mb-6">

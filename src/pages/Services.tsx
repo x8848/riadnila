@@ -12,7 +12,7 @@ export default function Services() {
 
   return (
     <Page>
-      <Header title={t('otherServices')} heroImage="/images/rooftop.jpeg" />
+      <Header title={t('otherServices')} heroImage="/images/rooftop.webp" />
 
       <Content>
         <div className="mb-6">

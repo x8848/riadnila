@@ -10,7 +10,7 @@ export default function Breakfast() {
 
   return (
     <Page>
-      <Header title={t('breakfast')} heroImage="/images/breakfast.jpg" />
+      <Header title={t('breakfast')} heroImage="/images/breakfast.webp" />
 
       <Content>
         <div className="mb-6">

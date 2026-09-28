@@ -12,7 +12,7 @@ export default function Restaurant() {
 
   return (
     <Page>
-      <Header title={t('restaurant')} heroImage="/images/food.jpeg" />
+      <Header title={t('restaurant')} heroImage="/images/food.webp" />
 
       <Content>
         <div className="mb-6">

@@ -11,7 +11,7 @@ export default function NotFound() {
 
   return (
     <Page className="min-h-[100dvh] flex flex-col justify-between">
-      <Header heroImage="/images/info.jpeg" showBack={false} />
+      <Header heroImage="/images/info.webp" showBack={false} />
 
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-12 text-center my-auto">
         <div className="max-w-md mx-auto flex flex-col items-center">
