@@ -173,43 +173,46 @@ export default function Gallery() {
           </nav>
         )}
 
-        {/* Clean Responsive Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-          {visiblePhotos.map((photo, index) => {
-            return (
-              <button
-                key={`${photo.src}-${index}`}
-                type="button"
-                onClick={() => setSelectedIndex(index)}
-                aria-label={photo.alt}
-                className="group relative block w-full aspect-[4/3] overflow-hidden rounded-2xl bg-terracotta-deep/10 text-left shadow-xs transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-terracotta"
+        {/* Responsive Photo & Video Layout */}
+        <div className="flex flex-col mb-12">
+          {/* Video: first on mobile (order-first), last on desktop (md:order-last) */}
+          {activeCategory === 'The Riad' && (
+            <div className="order-first md:order-last mb-6 md:mb-0 md:mt-6 overflow-hidden rounded-2xl">
+              <video
+                src="/video.mp4"
+                poster="/video-poster.webp"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full aspect-video rounded-2xl object-cover bg-black"
               >
-                <img
-                  src={photo.thumbnailSrc || photo.posterSrc || photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                />
-              </button>
-            )
-          })}
-        </div>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
 
-        {/* Video at the bottom of The Riad category */}
-        {activeCategory === 'The Riad' && (
-          <div className="mb-12 overflow-hidden rounded-2xl">
-            <video
-              src="/video.mp4"
-              poster="/video-poster.webp"
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full aspect-video rounded-2xl object-cover bg-black"
-            >
-              Your browser does not support the video tag.
-            </video>
+          {/* Clean Responsive Photo Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {visiblePhotos.map((photo, index) => {
+              return (
+                <button
+                  key={`${photo.src}-${index}`}
+                  type="button"
+                  onClick={() => setSelectedIndex(index)}
+                  aria-label={photo.alt}
+                  className="group relative block w-full aspect-[4/3] overflow-hidden rounded-2xl bg-terracotta-deep/10 text-left shadow-xs transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-terracotta"
+                >
+                  <img
+                    src={photo.thumbnailSrc || photo.posterSrc || photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </button>
+              )
+            })}
           </div>
-        )}
+        </div>
       </Content>
 
       <Footer />
