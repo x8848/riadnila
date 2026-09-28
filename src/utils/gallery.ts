@@ -2,14 +2,14 @@ import type { GalleryCategory, GalleryPhoto, GalleryRoom } from './types'
 
 const categorySlugMap: Record<string, GalleryCategory> = {
   'the-riad': 'The Riad',
-  'restaurant': 'Restaurant',
+  restaurant: 'Restaurant',
   'terrace-rooftop': 'Terrace & Rooftop',
   'hammam-spa': 'Hammam & Spa',
   'rooms-suites': 'Rooms & Suites',
 }
 
 const roomSlugMap: Record<string, GalleryRoom> = {
-  'akchour': 'Akchour',
+  akchour: 'Akchour',
   'bab-ain': 'Bab Ain',
   'bab-hammar': 'Bab Hammar',
   'bab-harmoun': 'Bab Harmoun',
@@ -21,15 +21,15 @@ const roomSlugMap: Record<string, GalleryRoom> = {
   'bab-onsar': 'Bab Onsar',
   'bab-sebanin': 'Bab Sebanin',
   'bab-souk': 'Bab Souk',
-  'kasbah': 'Kasbah',
+  kasbah: 'Kasbah',
   'outa-hammam': 'Outa Hammam',
   'ras-al-maa': 'Ras Al Maa',
 }
 
-const imageFiles = import.meta.glob<string>(
-  '/src/assets/gallery/**/*.{webp,jpeg,jpg,png}',
-  { eager: true, import: 'default' }
-)
+const imageFiles = import.meta.glob<string>('/src/assets/gallery/**/*.{webp,jpeg,jpg,png}', {
+  eager: true,
+  import: 'default',
+})
 
 export const galleryPhotos: GalleryPhoto[] = Object.entries(imageFiles).map(([path, src]) => {
   // Path format: /src/assets/gallery/<category-slug>/... or /src/assets/gallery/rooms-suites/<room-slug>/<filename>
