@@ -8,6 +8,7 @@ export enum Url {
   Spa = '/spa',
   Services = '/services',
   About = '/about',
+  Gallery = '/gallery',
   QRCode = '/qr',
   NotFound = '*',
 }

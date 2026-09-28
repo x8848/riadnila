@@ -1,5 +1,6 @@
 import About from '@/pages/About'
 import Breakfast from '@/pages/Breakfast'
+import Gallery from '@/pages/Gallery'
 import GuestInfo from '@/pages/GuestInfo'
 import Home from '@/pages/Home'
 import Menu from '@/pages/Menu'
@@ -31,6 +32,9 @@ export default function App() {
           <Route path={Url.Spa} element={<Spa />} />
           <Route path={Url.Services} element={<Services />} />
           <Route path={Url.About} element={<About />} />
+          <Route path={Url.Gallery} element={<Gallery />} />
+          <Route path={`${Url.Gallery}/:category`} element={<Gallery />} />
+          <Route path={`${Url.Gallery}/:category/:room`} element={<Gallery />} />
           <Route path={Url.QRCode} element={<QRCodePrint />} />
           <Route path={Url.NotFound} element={<NotFound />} />
         </Routes>

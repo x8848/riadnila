@@ -107,3 +107,35 @@ export interface QRCardProps {
   url: string
   filename: string
 }
+
+export type GalleryCategory = 'The Riad' | 'Rooms & Suites' | 'Terrace & Rooftop' | 'Restaurant' | 'Hammam & Spa'
+
+export type GalleryRoom =
+  | 'Akchour'
+  | 'Bab Ain'
+  | 'Bab Hammar'
+  | 'Bab Harmoun'
+  | 'Bab Mahrouq'
+  | 'Bab Mouqaf'
+  | 'Bab Mqadem'
+  | 'Bab Noukba'
+  | 'Bab Onsar'
+  | 'Bab Sebanin'
+  | 'Bab Souk'
+  | 'Kasbah'
+  | 'Bab Mellah'
+  | 'Outa Hammam'
+  | 'Ras Al Maa'
+
+export interface GalleryPhoto {
+  src: string
+  thumbnailSrc?: string | null
+  posterSrc?: string | null
+  alt: string
+  category: GalleryCategory
+  size?: 'feature' | 'tall' | 'standard' | 'wide'
+  type?: 'image' | 'video'
+  room?: GalleryRoom | null
+  featuredInAll?: boolean
+  hiddenFromAll?: boolean
+}

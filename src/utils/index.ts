@@ -56,6 +56,13 @@ export const getNavCards = (t: TranslateFn): NavCardItem[] => [
     image: '/images/rooftop.jpeg',
   },
   {
+    id: 'gallery',
+    to: Url.Gallery,
+    title: t('gallery'),
+    kicker: t('galleryFeatured'),
+    image: '/images/gallery.webp',
+  },
+  {
     id: 'about',
     to: Url.About,
     title: t('about'),
@@ -63,6 +70,8 @@ export const getNavCards = (t: TranslateFn): NavCardItem[] => [
     image: '/images/about.jpeg',
   },
 ]
+
+export { galleryPhotos } from './gallery'
 
 export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
   {
