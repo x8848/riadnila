@@ -50,7 +50,7 @@ export default function LanguageToggle() {
 
       {isOpen && (
         <div
-          className="absolute right-0 mt-2 w-52 rounded-2xl shadow-2xl border py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto"
+          className="absolute end-0 mt-2 w-52 rounded-2xl shadow-2xl border py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto"
           style={{
             backgroundColor: '#f7f3ec',
             borderColor: 'rgba(179, 147, 104, 0.25)',

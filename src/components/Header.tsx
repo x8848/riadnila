@@ -1,14 +1,24 @@
 import { Url } from '@/utils/enums'
+import { useLanguage } from '@/utils/i18n'
 import type { HeaderProps } from '@/utils/types'
 import { ArrowLeft } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import LanguageToggle from './LanguageToggle'
 
-export default function Header({ title, subtitle, showBack, heroImage }: HeaderProps) {
+export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
+  const { t } = useLanguage()
   const navigate = useNavigate()
   const location = useLocation()
   const isHome = location.pathname === Url.Home
   const shouldShowBack = showBack ?? !isHome
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1)
+    } else {
+      navigate(Url.Home)
+    }
+  }
 
   return (
     <section className="hero-section relative z-30">
@@ -30,11 +40,13 @@ export default function Header({ title, subtitle, showBack, heroImage }: HeaderP
       <div className="relative z-50 w-full max-w-[1180px] mx-auto px-5 lg:px-8 pt-5 flex items-center justify-between">
         {shouldShowBack ? (
           <button
-            onClick={() => navigate(-1)}
-            aria-label="Go back"
+            type="button"
+            onClick={handleBack}
+            aria-label={t('goBack')}
+            title={t('goBack')}
             className="w-11 h-11 rounded-full border border-white/55 bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/30 transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
           </button>
         ) : (
           <div className="w-11 h-11" />
@@ -63,9 +75,6 @@ export default function Header({ title, subtitle, showBack, heroImage }: HeaderP
             }}
           />
         </Link>
-        {/* {title && (
-          <h1 className="serif text-3xl sm:text-4xl font-medium text-white tracking-wide px-4 py-2">{title}</h1>
-        )} */}
         {subtitle && (
           <p className="serif italic text-base sm:text-lg leading-relaxed max-w-md mx-auto text-white/90 px-4 py-1.5 mt-1">
             {subtitle}

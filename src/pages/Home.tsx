@@ -11,7 +11,7 @@ export default function Home() {
   const navCards = getNavCards(t)
 
   return (
-    <Page dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <Page>
       <Header subtitle={t('tagline')} heroImage="/images/info.webp" />
 
       <Content className="pb-8">
