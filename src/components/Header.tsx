@@ -1,4 +1,4 @@
-import { Url } from '@/utils/enums'
+import { handleGoBack, Url } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 import type { HeaderProps } from '@/utils/types'
 import { ArrowLeft } from 'lucide-react'
@@ -11,14 +11,6 @@ export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
   const location = useLocation()
   const isHome = location.pathname === Url.Home
   const shouldShowBack = showBack ?? !isHome
-
-  const handleBack = () => {
-    if (window.history.length > 1) {
-      navigate(-1)
-    } else {
-      navigate(Url.Home)
-    }
-  }
 
   return (
     <section className="hero-section relative z-30">
@@ -45,7 +37,7 @@ export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
         {shouldShowBack && (
           <button
             type="button"
-            onClick={handleBack}
+            onClick={() => handleGoBack(navigate)}
             aria-label={t('goBack')}
             title={t('goBack')}
             className="w-11 h-11 rounded-full border border-white/55 bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/30 transition-colors"
@@ -62,17 +54,7 @@ export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
           <div
             role="img"
             aria-label="Riad Nila"
-            className="w-44 sm:w-56 md:w-64 aspect-[1124/863] bg-sand mx-auto drop-shadow-md"
-            style={{
-              maskImage: 'url(/images/logo.png)',
-              WebkitMaskImage: 'url(/images/logo.png)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              maskPosition: 'center',
-              WebkitMaskPosition: 'center',
-            }}
+            className="w-44 sm:w-56 md:w-64 aspect-[1124/863] bg-sand mx-auto drop-shadow-md brand-logo"
           />
         </Link>
         {subtitle && (

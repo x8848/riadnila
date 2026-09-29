@@ -1,8 +1,4 @@
-interface WhatsAppButtonProps {
-  href: string
-  label: string
-  className?: string
-}
+import type { WhatsAppButtonProps } from '@/utils/types'
 
 export default function WhatsAppButton({ href, label, className = '' }: WhatsAppButtonProps) {
   return (

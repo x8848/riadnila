@@ -1,26 +1,24 @@
+import BookingCtaCard from '@/components/BookingCtaCard'
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import InfoCard from '@/components/InfoCard'
 import Page from '@/components/Page'
-import WhatsAppButton from '@/components/WhatsAppButton'
-import { getServices } from '@/utils'
+import PageHeader from '@/components/PageHeader'
+import { getConciergeItems, getServices, getWhatsAppUrl } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function Services() {
   const { t } = useLanguage()
   const services = getServices(t)
+  const conciergeItems = getConciergeItems(t)
 
   return (
     <Page>
       <Header title={t('otherServices')} heroImage="/images/rooftop.webp" />
 
       <Content>
-        <div className="mb-6">
-          <p className="eyebrow mb-2">{t('riadNila')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('personalizedExperiences')}</h2>
-          <div className="mini-divider" />
-          <p className="text-sm leading-relaxed text-ink/80">{t('servicesDesc')}</p>
-        </div>
+        <PageHeader eyebrow={t('riadNila')} title={t('personalizedExperiences')} description={t('servicesDesc')} />
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -46,43 +44,26 @@ export default function Services() {
         </div>
 
         {/* Concierge Information */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">🛎️</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('conciergeServices')}</h3>
-          </div>
+        <InfoCard icon="🛎️" title={t('conciergeServices')} className="mb-6">
           <p className="text-sm text-ink/80 mb-3">{t('conciergeAvailable')}</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2">
-              <span className="text-gold mt-0.5">•</span>
-              <span>{t('conciergeItem1')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-gold mt-0.5">•</span>
-              <span>{t('conciergeItem2')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-gold mt-0.5">•</span>
-              <span>{t('conciergeItem3')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-gold mt-0.5">•</span>
-              <span>{t('conciergeItem4')}</span>
-            </li>
+            {conciergeItems.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-gold mt-0.5">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
-        </div>
+        </InfoCard>
 
         {/* Contact CTA */}
-        <div className="section-card">
-          <p className="text-sm text-muted-foreground mb-4">{t('contactConcierge')}</p>
-          <WhatsAppButton
-            href="https://wa.me/212662134431?text=Hello%20Riad%20Nila%2C%20I%20would%20like%20to%20inquire%20about%20services."
-            label={t('contactUs')}
-          />
-        </div>
+        <BookingCtaCard
+          note={t('contactConcierge')}
+          href={getWhatsAppUrl('Hello Riad Nila, I would like to inquire about services.')}
+          label={t('contactUs')}
+        />
       </Content>
 
-      {/* Footer */}
       <Footer />
     </Page>
   )

@@ -1,29 +1,39 @@
+import BookingCtaCard from '@/components/BookingCtaCard'
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import InfoCard from '@/components/InfoCard'
 import Page from '@/components/Page'
-import WhatsAppButton from '@/components/WhatsAppButton'
-import { getAmenities } from '@/utils'
+import PageHeader from '@/components/PageHeader'
+import {
+  getAmenities,
+  getGuestInfoCheckInOut,
+  getGuestInfoHouseRules,
+  getGuestInfoLocalTips,
+  getGuestInfoServiceSections,
+  PHONE_NUMBER,
+  PHONE_TEL_HREF,
+  WHATSAPP_BASE_URL,
+} from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function GuestInfo() {
   const { t } = useLanguage()
   const amenities = getAmenities(t)
+  const checkInOutDetails = getGuestInfoCheckInOut(t)
+  const houseRules = getGuestInfoHouseRules(t)
+  const localTips = getGuestInfoLocalTips(t)
+  const serviceSections = getGuestInfoServiceSections(t)
 
   return (
     <Page>
       <Header title={t('guestInformation')} heroImage="/images/info.webp" />
 
       <Content>
-        <div className="mb-6">
-          <p className="eyebrow mb-2">{t('riadNila')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('yourComfortAwaits')}</h2>
-          <div className="mini-divider" />
-          <p className="text-sm leading-relaxed text-ink/80">{t('experienceAuthentic')}</p>
-        </div>
+        <PageHeader eyebrow={t('riadNila')} title={t('yourComfortAwaits')} description={t('experienceAuthentic')} />
 
         {/* Amenities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {amenities.map((amenity, idx) => (
             <div key={idx} className="section-card">
               <div className="flex gap-3 items-center">
@@ -38,11 +48,7 @@ export default function GuestInfo() {
         </div>
 
         {/* Check-in & Check-out */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">✅</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('checkInCheckOut')}</h3>
-          </div>
+        <InfoCard icon="✅" title={t('checkInCheckOut')} className="mb-6">
           <div className="space-y-3 text-sm">
             <div>
               <p className="font-semibold text-ink">{t('checkInFrom')}</p>
@@ -50,99 +56,53 @@ export default function GuestInfo() {
             <div>
               <p className="font-semibold text-ink">{t('checkOutUntil')}</p>
             </div>
-            <div className="pt-2 border-t border-gray-200">
-              <p className="text-muted-foreground">• {t('receptionLocated')}</p>
-              <p className="text-muted-foreground mt-1">• {t('pleaseInform')}</p>
-              <p className="text-muted-foreground mt-1">• {t('validID')}</p>
+            <div className="pt-2 border-t border-gray-200 space-y-1">
+              {checkInOutDetails.map((detail, idx) => (
+                <p key={idx} className="text-muted-foreground">
+                  • {detail}
+                </p>
+              ))}
             </div>
           </div>
-        </div>
+        </InfoCard>
 
         {/* House Rules & Policies */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">📋</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('houseRules')}</h3>
+        <InfoCard icon="📋" title={t('houseRules')} className="mb-6">
+          <div className="space-y-2 text-sm text-muted-foreground">
+            {houseRules.map((rule, idx) => (
+              <p key={idx}>{rule}</p>
+            ))}
           </div>
-          <div className="space-y-2 text-sm">
-            <p className="text-muted-foreground">{t('quietHours')}</p>
-            <p className="text-muted-foreground">{t('noSmoking')}</p>
-            <p className="text-muted-foreground">{t('petsWelcome')}</p>
-            <p className="text-muted-foreground">{t('outsideFood')}</p>
-          </div>
-        </div>
+        </InfoCard>
 
         {/* Services & Amenities */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">🛎️</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('servicesAmenities')}</h3>
-          </div>
+        <InfoCard icon="🛎️" title={t('servicesAmenities')} className="mb-6">
           <div className="space-y-4">
-            {/* Accommodation */}
-            <div>
-              <p className="font-semibold text-ink text-sm mb-1">{t('accommodation')}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• {t('fifteenRooms')}</li>
-                <li>• {t('roomsRange')}</li>
-              </ul>
-            </div>
-
-            {/* Restaurant */}
-            <div>
-              <p className="font-semibold text-ink text-sm mb-1">{t('restaurant')}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• {t('ourRestaurant')}</li>
-                <li>• {t('breakfastServed')}</li>
-                <li>• {t('lunchDinner')}</li>
-                <li>• {t('guestsDine')}</li>
-              </ul>
-            </div>
-
-            {/* Spa */}
-            <div>
-              <p className="font-semibold text-ink text-sm mb-1">{t('spa')}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• {t('locatedSection')}</li>
-                <li>• {t('advanceBooking')}</li>
-                <li>• {t('browseFull')}</li>
-                <li>• {t('openDaily')}</li>
-              </ul>
-            </div>
-
-            {/* Terraces & Rooftop */}
-            <div>
-              <p className="font-semibold text-ink text-sm mb-1">{t('terraces')}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• {t('twoLevels')}</li>
-                <li>• {t('perfectFor')}</li>
-                <li>• {t('rooftopMay')}</li>
-              </ul>
-            </div>
+            {serviceSections.map((section, idx) => (
+              <div key={idx}>
+                <p className="font-semibold text-ink text-sm mb-1">{section.title}</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  {section.items.map((item, itemIdx) => (
+                    <li key={itemIdx}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        </div>
+        </InfoCard>
 
         {/* Local Tips & Area Info */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">📍</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('localTips')}</h3>
+        <InfoCard icon="📍" title={t('localTips')} className="mb-6">
+          <div className="space-y-2 text-sm text-muted-foreground">
+            {localTips.map((tip, idx) => (
+              <p key={idx}>{tip}</p>
+            ))}
+            <p className="pt-2 border-t border-gray-200 mt-2">{t('forTours')}</p>
           </div>
-          <div className="space-y-2 text-sm">
-            <p className="text-muted-foreground">{t('riadNilaJust')}</p>
-            <p className="text-muted-foreground">{t('medinaStreets')}</p>
-            <p className="text-muted-foreground">{t('weRecommend')}</p>
-            <p className="text-muted-foreground">{t('bargaining')}</p>
-            <p className="text-muted-foreground pt-2 border-t border-gray-200 mt-2">{t('forTours')}</p>
-          </div>
-        </div>
+        </InfoCard>
 
         {/* Housekeeping Note */}
-        <div className="section-card mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg leading-none">🛏️</span>
-            <h3 className="serif text-lg font-medium text-terracotta-deep">{t('housekeeping')}</h3>
-          </div>
+        <InfoCard icon="🛏️" title={t('housekeeping')} className="mb-6">
           <div className="space-y-3 text-sm">
             <p className="text-muted-foreground">{t('forGuests')}</p>
             <div className="bg-sand/50 rounded-lg p-3 space-y-2">
@@ -155,26 +115,29 @@ export default function GuestInfo() {
             </div>
             <p className="text-muted-foreground italic">{t('smallGesture')}</p>
           </div>
-        </div>
+        </InfoCard>
 
         {/* Contact Information */}
         <div className="section-card">
           <h3 className="serif text-lg font-medium text-terracotta-deep mb-3">{t('contactUs')}</h3>
           <a
-            href="tel:+212662134431"
+            href={PHONE_TEL_HREF}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-sand transition-colors mb-3"
           >
             <span className="text-lg leading-none">📞</span>
             <div>
-              <p className="font-semibold text-ink">+212 662 134 431</p>
+              <p className="font-semibold text-ink">{PHONE_NUMBER}</p>
             </div>
           </a>
-          <p className="text-sm text-ink/80 mb-4">{t('contactConcierge')}</p>
-          <WhatsAppButton href="https://wa.me/212662134431" label={t('contactUs')} />
+          <BookingCtaCard
+            note={t('contactConcierge')}
+            href={WHATSAPP_BASE_URL}
+            label={t('contactUs')}
+            className="p-0 border-0 shadow-none bg-transparent"
+          />
         </div>
       </Content>
 
-      {/* Footer */}
       <Footer />
     </Page>
   )

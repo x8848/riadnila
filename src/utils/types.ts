@@ -11,13 +11,6 @@ export interface LanguageContextType {
   t: TranslateFn
 }
 
-export interface HeaderProps {
-  title?: string
-  subtitle?: string
-  showBack?: boolean
-  heroImage?: string
-}
-
 export interface MenuItem {
   name: string
   price: string
@@ -51,6 +44,28 @@ export interface Treatment {
   description: string
 }
 
+export interface AboutValue {
+  icon: string
+  title: string
+  description: string
+}
+
+export interface AboutFacility {
+  title: string
+  description: string
+}
+
+export interface BreakfastMenuData {
+  drinks: string[]
+  eggs: string[]
+  traditional: string[]
+}
+
+export interface GuestInfoSection {
+  title: string
+  items: string[]
+}
+
 export interface LanguageOption {
   code: Language
   name: string
@@ -75,15 +90,9 @@ export interface RestaurantMenuItem {
   description?: string
 }
 
-export interface NavCardProps {
-  image: string
-  title: string
-  kicker: string
-  to?: Url | string
-  href?: string
-  disabled?: boolean
-  className?: string
-}
+// -------------------------------------------------------------
+// Component Props
+// -------------------------------------------------------------
 
 export interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
@@ -92,6 +101,63 @@ export interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
+  className?: string
+}
+
+export interface HeaderProps {
+  title?: string
+  subtitle?: string
+  showBack?: boolean
+  heroImage?: string
+}
+
+export interface PageHeaderProps {
+  eyebrow?: string
+  title: string
+  description?: ReactNode
+  className?: string
+}
+
+export interface InfoCardProps {
+  title?: ReactNode
+  icon?: ReactNode
+  children: ReactNode
+  className?: string
+}
+
+export interface ServiceHoursCardProps {
+  title: ReactNode
+  children: ReactNode
+  className?: string
+}
+
+export interface AlertNoticeProps {
+  icon?: ReactNode
+  title?: ReactNode
+  children: ReactNode
+  className?: string
+}
+
+export interface BookingCtaCardProps {
+  note: ReactNode
+  href: string
+  label?: string
+  className?: string
+}
+
+export interface WhatsAppButtonProps {
+  href: string
+  label: string
+  className?: string
+}
+
+export interface NavCardProps {
+  image: string
+  title: string
+  kicker: string
+  to?: Url | string
+  href?: string
+  disabled?: boolean
   className?: string
 }
 
@@ -107,6 +173,23 @@ export interface QRCardProps {
   url: string
   filename: string
 }
+
+export interface LightboxProps {
+  src: string
+  alt: string
+  currentIndex: number
+  totalCount: number
+  closeLabel?: string
+  prevLabel?: string
+  nextLabel?: string
+  onClose: () => void
+  onPrev: () => void
+  onNext: () => void
+}
+
+// -------------------------------------------------------------
+// Gallery Types
+// -------------------------------------------------------------
 
 export type GalleryCategory = 'The Riad' | 'Rooms & Suites' | 'Terrace & Rooftop' | 'Restaurant' | 'Hammam & Spa'
 
@@ -126,6 +209,17 @@ export type GalleryRoom =
   | 'Bab Mellah'
   | 'Outa Hammam'
   | 'Ras Al Maa'
+
+export interface GalleryCategoryItem {
+  key: GalleryCategory
+  labelKey: string
+  slug: string
+}
+
+export interface GalleryRoomItem {
+  name: GalleryRoom
+  slug: string
+}
 
 export interface GalleryPhoto {
   src: string

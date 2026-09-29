@@ -1,6 +1,7 @@
 import Page from '@/components/Page'
+import PageHeader from '@/components/PageHeader'
 import QRCard from '@/components/QRCard'
-import { Url } from '@/utils/enums'
+import { handleGoBack, Url } from '@/utils'
 import { ArrowLeft, Printer } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
@@ -10,7 +11,7 @@ const MENU_URL = `${HOME_URL}${Url.Menu}`
 export default function QRCodePrint() {
   const navigate = useNavigate()
 
-  const printQR = () => {
+  const handlePrint = () => {
     window.print()
   }
 
@@ -19,15 +20,17 @@ export default function QRCodePrint() {
       {/* Top Bar - No Print */}
       <div className="no-print w-full max-w-5xl flex items-center justify-between mb-8">
         <button
-          onClick={() => (window.history.length > 1 ? navigate(-1) : navigate(Url.Home))}
+          type="button"
+          onClick={() => handleGoBack(navigate)}
           aria-label="Go back"
           className="w-11 h-11 rounded-full border border-white/55 bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/30 transition-colors cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
         </button>
 
         <button
-          onClick={printQR}
+          type="button"
+          onClick={handlePrint}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
         >
           <Printer className="w-4 h-4" />
@@ -37,12 +40,12 @@ export default function QRCodePrint() {
 
       {/* Header */}
       <div className="text-center mb-10 max-w-xl">
-        <p className="eyebrow mb-2">Riad Nila Chefchaouen</p>
-        <h1 className="serif text-3xl sm:text-4xl font-medium text-terracotta-deep mb-2">Digital Guest Access</h1>
-        <div className="mini-divider mx-auto mb-3" />
-        <p className="text-sm text-ink/75 leading-relaxed">
-          Scan with your phone camera for instant access to the guest portal and restaurant menu
-        </p>
+        <PageHeader
+          eyebrow="Riad Nila Chefchaouen"
+          title="Digital Guest Access"
+          description="Scan with your phone camera for instant access to the guest portal and restaurant menu"
+          className="text-center [&>.mini-divider]:mx-auto"
+        />
       </div>
 
       {/* QR Code Cards Grid */}
@@ -64,7 +67,7 @@ export default function QRCodePrint() {
 
       {/* Print Instructions footer - No print */}
       <div className="no-print text-center text-sm text-ink/60 w-full max-w-5xl">
-        <p>Tip: Click "Print QR Codes" to print both cards cleanly on an A4 sheet for tables or reception.</p>
+        <p>Tip: Click &quot;Print QR Codes&quot; to print both cards cleanly on an A4 sheet for tables or reception.</p>
       </div>
 
       {/* Print Styles */}

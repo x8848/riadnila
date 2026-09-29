@@ -1,7 +1,16 @@
 export { Url } from './enums'
+export * from './gallery'
+export * from './hooks'
+export * from './types'
+
+import type { NavigateFunction } from 'react-router-dom'
 import { Url } from './enums'
 import type {
+  AboutFacility,
+  AboutValue,
   Amenity,
+  BreakfastMenuData,
+  GuestInfoSection,
   LanguageOption,
   MenuSection,
   NavCardItem,
@@ -11,7 +20,29 @@ import type {
   Treatment,
 } from './types'
 
-export const OCTORATE_URL = `https://book.octorate.com/octobook/site/reservation/index.xhtml;octobooksessionid=26a078a9c0bd7bab60b71d1e532e?codice=470391`
+export const PHONE_NUMBER = '+212 662 134 431'
+export const PHONE_TEL_HREF = 'tel:+212662134431'
+export const WHATSAPP_BASE_URL = 'https://wa.me/212662134431'
+
+export const getWhatsAppUrl = (message?: string): string => {
+  if (!message) return WHATSAPP_BASE_URL
+  return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`
+}
+
+export const handleGoBack = (navigate: NavigateFunction): void => {
+  if (window.history.length > 1) {
+    navigate(-1)
+  } else {
+    navigate(Url.Home)
+  }
+}
+
+export const scrollToTop = (behavior: ScrollBehavior = 'smooth'): void => {
+  window.scrollTo({ top: 0, behavior })
+}
+
+export const OCTORATE_URL =
+  'https://book.octorate.com/octobook/site/reservation/index.xhtml;octobooksessionid=26a078a9c0bd7bab60b71d1e532e?codice=470391'
 
 export const languages: LanguageOption[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -70,8 +101,6 @@ export const getNavCards = (t: TranslateFn): NavCardItem[] => [
     image: '/images/about.webp',
   },
 ]
-
-export { galleryPhotos } from './gallery'
 
 export const getRestaurantMenus = (t: TranslateFn): RestaurantMenuItem[] => [
   {
@@ -367,4 +396,98 @@ export const getAmenities = (t: TranslateFn): Amenity[] => [
   { icon: '🍽️', title: t('restaurant'), description: t('onSiteDining') },
   { icon: '🚿', title: t('hotWater'), description: t('hotWaterSupply') },
   { icon: '❄️', title: t('airConditioning'), description: t('climateControl') },
+]
+
+export const getAboutValues = (t: TranslateFn): AboutValue[] => [
+  {
+    icon: '❤️',
+    title: t('authenticHospitality'),
+    description: t('authenticHospitalityDesc'),
+  },
+  {
+    icon: '🏛️',
+    title: t('respectfulRestoration'),
+    description: t('respectfulRestorationDesc'),
+  },
+  {
+    icon: '🤝',
+    title: t('communityConnection'),
+    description: t('communityConnectionDesc'),
+  },
+]
+
+export const getAboutFacilities = (t: TranslateFn): AboutFacility[] => [
+  { title: t('accommodations'), description: t('accommodationsDesc') },
+  { title: t('commonSpaces'), description: t('commonSpacesDesc') },
+  { title: t('dining'), description: t('diningDesc') },
+  { title: t('wellness'), description: t('wellnessDesc') },
+]
+
+export const getAboutReasons = (t: TranslateFn): string[] => [
+  t('whyChoose1'),
+  t('whyChoose2'),
+  t('whyChoose3'),
+  t('whyChoose4'),
+  t('whyChoose5'),
+]
+
+export const getBreakfastMenuData = (t: TranslateFn): BreakfastMenuData => ({
+  drinks: [t('moroccanMintTea'), t('coffee'), t('milk'), t('blackTea'), t('chocolateMilk')],
+  eggs: [t('scrambledEggs'), t('friedEggs'), t('omelette')],
+  traditional: [
+    t('msemen'),
+    t('moroccanBread'),
+    t('olives'),
+    t('oliveOil'),
+    t('whiteCheese'),
+    t('jam'),
+    t('honey'),
+    t('amlou'),
+  ],
+})
+
+export const getGuestInfoCheckInOut = (t: TranslateFn): string[] => [
+  t('receptionLocated'),
+  t('pleaseInform'),
+  t('validID'),
+]
+
+export const getGuestInfoHouseRules = (t: TranslateFn): string[] => [
+  t('quietHours'),
+  t('noSmoking'),
+  t('petsWelcome'),
+  t('outsideFood'),
+]
+
+export const getGuestInfoLocalTips = (t: TranslateFn): string[] => [
+  t('riadNilaJust'),
+  t('medinaStreets'),
+  t('weRecommend'),
+  t('bargaining'),
+]
+
+export const getGuestInfoServiceSections = (t: TranslateFn): GuestInfoSection[] => [
+  {
+    title: t('accommodation'),
+    items: [t('fifteenRooms'), t('roomsRange')],
+  },
+  {
+    title: t('restaurant'),
+    items: [t('ourRestaurant'), t('breakfastServed'), t('lunchDinner'), t('guestsDine')],
+  },
+  {
+    title: t('spa'),
+    items: [t('locatedSection'), t('advanceBooking'), t('browseFull'), t('openDaily')],
+  },
+  {
+    title: t('terraces'),
+    items: [t('twoLevels'), t('perfectFor'), t('rooftopMay')],
+  },
+]
+
+export const getConciergeItems = (t: TranslateFn): string[] => [
+  t('conciergeItem1'),
+  t('conciergeItem2'),
+  t('conciergeItem3'),
+  t('conciergeItem4'),
 ]

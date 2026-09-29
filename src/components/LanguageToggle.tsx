@@ -1,8 +1,8 @@
+import { languages } from '@/utils'
+import { useClickOutside } from '@/utils/hooks'
 import { useLanguage } from '@/utils/i18n'
 import { Check } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
-
-import { languages } from '@/utils'
+import { useRef, useState } from 'react'
 
 export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
@@ -11,29 +11,7 @@ export default function LanguageToggle() {
 
   const currentLanguage = languages.find(lang => lang.code === language)
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
-      }
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setIsOpen(false)
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-      document.addEventListener('keydown', handleKeyDown)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [isOpen])
+  useClickOutside(containerRef, () => setIsOpen(false), isOpen)
 
   return (
     <div className="relative inline-block text-start" ref={containerRef}>

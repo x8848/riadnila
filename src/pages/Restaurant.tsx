@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
 import Page from '@/components/Page'
+import PageHeader from '@/components/PageHeader'
 import { getRestaurantMenus } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
@@ -15,10 +16,7 @@ export default function Restaurant() {
       <Header title={t('restaurant')} heroImage="/images/food.webp" />
 
       <Content>
-        <div className="mb-6">
-          <p className="eyebrow mb-2">{t('riadNila')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('restaurant')}</h2>
-        </div>
+        <PageHeader eyebrow={t('riadNila')} title={t('restaurant')} />
 
         <div className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
           {restaurantMenus.map(menu => (

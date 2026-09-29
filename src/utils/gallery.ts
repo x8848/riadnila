@@ -1,30 +1,36 @@
-import type { GalleryCategory, GalleryPhoto, GalleryRoom } from './types'
+import type { GalleryCategory, GalleryCategoryItem, GalleryPhoto, GalleryRoom, GalleryRoomItem } from './types'
 
-const categorySlugMap: Record<string, GalleryCategory> = {
-  'the-riad': 'The Riad',
-  restaurant: 'Restaurant',
-  'terrace-rooftop': 'Terrace & Rooftop',
-  'hammam-spa': 'Hammam & Spa',
-  'rooms-suites': 'Rooms & Suites',
-}
+export const GALLERY_CATEGORIES: GalleryCategoryItem[] = [
+  { key: 'The Riad', labelKey: 'galleryTheRiad', slug: 'the-riad' },
+  { key: 'Restaurant', labelKey: 'galleryRestaurant', slug: 'restaurant' },
+  { key: 'Terrace & Rooftop', labelKey: 'galleryTerraceRooftop', slug: 'terrace-rooftop' },
+  { key: 'Hammam & Spa', labelKey: 'galleryHammamSpa', slug: 'hammam-spa' },
+  { key: 'Rooms & Suites', labelKey: 'galleryRoomsSuites', slug: 'rooms-suites' },
+]
 
-const roomSlugMap: Record<string, GalleryRoom> = {
-  akchour: 'Akchour',
-  'bab-ain': 'Bab Ain',
-  'bab-hammar': 'Bab Hammar',
-  'bab-harmoun': 'Bab Harmoun',
-  'bab-mahrouq': 'Bab Mahrouq',
-  'bab-mellah': 'Bab Mellah',
-  'bab-mouqaf': 'Bab Mouqaf',
-  'bab-mqadem': 'Bab Mqadem',
-  'bab-noukba': 'Bab Noukba',
-  'bab-onsar': 'Bab Onsar',
-  'bab-sebanin': 'Bab Sebanin',
-  'bab-souk': 'Bab Souk',
-  kasbah: 'Kasbah',
-  'outa-hammam': 'Outa Hammam',
-  'ras-al-maa': 'Ras Al Maa',
-}
+export const GALLERY_ROOMS: GalleryRoomItem[] = [
+  { name: 'Akchour', slug: 'akchour' },
+  { name: 'Bab Ain', slug: 'bab-ain' },
+  { name: 'Bab Hammar', slug: 'bab-hammar' },
+  { name: 'Bab Harmoun', slug: 'bab-harmoun' },
+  { name: 'Bab Mahrouq', slug: 'bab-mahrouq' },
+  { name: 'Bab Mellah', slug: 'bab-mellah' },
+  { name: 'Bab Mouqaf', slug: 'bab-mouqaf' },
+  { name: 'Bab Mqadem', slug: 'bab-mqadem' },
+  { name: 'Bab Noukba', slug: 'bab-noukba' },
+  { name: 'Bab Onsar', slug: 'bab-onsar' },
+  { name: 'Bab Sebanin', slug: 'bab-sebanin' },
+  { name: 'Bab Souk', slug: 'bab-souk' },
+  { name: 'Kasbah', slug: 'kasbah' },
+  { name: 'Outa Hammam', slug: 'outa-hammam' },
+  { name: 'Ras Al Maa', slug: 'ras-al-maa' },
+]
+
+export const CATEGORY_SLUG_MAP: Record<string, GalleryCategory> = Object.fromEntries(
+  GALLERY_CATEGORIES.map(c => [c.slug, c.key]),
+)
+
+export const ROOM_SLUG_MAP: Record<string, GalleryRoom> = Object.fromEntries(GALLERY_ROOMS.map(r => [r.slug, r.name]))
 
 const imageFiles = import.meta.glob<string>('/src/assets/gallery/**/*.{webp,jpeg,jpg,png}', {
   eager: true,
@@ -38,14 +44,9 @@ export const galleryPhotos: GalleryPhoto[] = Object.entries(imageFiles).map(([pa
   const isRoom = categorySlug === 'rooms-suites' && parts.length > 2
   const roomSlug = isRoom ? parts[1] : undefined
 
-  const category = categorySlugMap[categorySlug] || 'The Riad'
-  const room = roomSlug ? roomSlugMap[roomSlug] || null : null
+  const category = CATEGORY_SLUG_MAP[categorySlug] || 'The Riad'
+  const room = roomSlug ? ROOM_SLUG_MAP[roomSlug] || null : null
   const alt = room ? `Riad Nila - ${room}` : `Riad Nila - ${category}`
 
-  return {
-    src,
-    alt,
-    category,
-    room,
-  }
+  return { src, alt, category, room }
 })

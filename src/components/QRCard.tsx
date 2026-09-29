@@ -8,18 +8,16 @@ export default function QRCard({ title, description, url, filename }: QRCardProp
 
   const downloadQR = () => {
     const canvas = qrRef.current?.querySelector('canvas')
-    if (canvas) {
-      const link = document.createElement('a')
-      link.href = canvas.toDataURL('image/png')
-      link.download = filename
-      link.click()
-    }
+    if (!canvas) return
+
+    const link = document.createElement('a')
+    link.href = canvas.toDataURL('image/png')
+    link.download = filename
+    link.click()
   }
 
   return (
-    <div
-      className={`qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all`.trim()}
-    >
+    <div className="qr-card bg-white rounded-2xl shadow-xl border border-stone-200/80 p-8 flex flex-col items-center text-center transition-all">
       <h2 className="serif text-2xl font-medium text-terracotta-deep mb-2">{title}</h2>
       <p className="text-sm text-ink/70 mb-6 max-w-xs">{description}</p>
 
@@ -43,6 +41,7 @@ export default function QRCard({ title, description, url, filename }: QRCardProp
 
       <div className="no-print w-full">
         <button
+          type="button"
           onClick={downloadQR}
           className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-terracotta-deep text-white hover:bg-terracotta transition-colors shadow-sm cursor-pointer"
         >

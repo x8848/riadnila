@@ -3,11 +3,12 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import NavCard from '@/components/NavCard'
 import Page from '@/components/Page'
+import PageHeader from '@/components/PageHeader'
 import { getNavCards, OCTORATE_URL } from '@/utils'
 import { useLanguage } from '@/utils/i18n'
 
 export default function Home() {
-  const { language, t } = useLanguage()
+  const { t } = useLanguage()
   const navCards = getNavCards(t)
 
   return (
@@ -15,11 +16,7 @@ export default function Home() {
       <Header subtitle={t('tagline')} heroImage="/images/info.webp" />
 
       <Content className="pb-8">
-        <div className="mb-6">
-          <p className="eyebrow mb-2">{t('yourStayWithUs')}</p>
-          <h2 className="serif text-3xl font-medium text-terracotta-deep mb-3">{t('discoverRiadNila')}</h2>
-          <div className="mini-divider" />
-        </div>
+        <PageHeader eyebrow={t('yourStayWithUs')} title={t('discoverRiadNila')} />
 
         <div className="space-y-4">
           {navCards.map(card => (
