@@ -433,5 +433,6 @@
   "close": "Fermer",
   "previous": "Photo précédente",
   "next": "Photo suivante",
-  "digitalGuestAccess": "Accès numérique des clients"
+  "digitalGuestAccess": "Accès numérique des clients",
+  "scrollToTop": "Défiler vers le haut"
 }

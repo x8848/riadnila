@@ -433,5 +433,6 @@
   "close": "关闭",
   "previous": "上一张",
   "next": "下一张",
-  "digitalGuestAccess": "数字客人通道"
+  "digitalGuestAccess": "数字客人通道",
+  "scrollToTop": "滚动至顶部"
 }

@@ -433,5 +433,6 @@
   "close": "Fechar",
   "previous": "Foto anterior",
   "next": "Foto seguinte",
-  "digitalGuestAccess": "Acesso digital para hóspedes"
+  "digitalGuestAccess": "Acesso digital para hóspedes",
+  "scrollToTop": "Rolar para o topo"
 }

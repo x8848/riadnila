@@ -174,7 +174,7 @@ export default function Gallery() {
         )}
 
         {/* Responsive Photo & Video Layout */}
-        <div className="flex flex-col mb-12">
+        <div className="flex flex-col">
           {/* Video: first on mobile (order-first), last on desktop (md:order-last) */}
           {activeCategory === 'The Riad' && (
             <div className="order-first md:order-last mb-6 md:mb-0 md:mt-6 overflow-hidden rounded-2xl">

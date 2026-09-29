@@ -1,14 +1,31 @@
 import { Url } from '@/utils/enums'
 import { useLanguage } from '@/utils/i18n'
-import { MapPin, MessageCircle, QrCode, Star } from 'lucide-react'
+import { ArrowUp, MapPin, MessageCircle, QrCode, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
   const { t } = useLanguage()
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <footer className="mt-4 border-t border-terracotta-deep/15 bg-black/[0.03] py-8 px-6 text-ink">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
+    <footer className="relative mt-4 border-t border-terracotta-deep/15 bg-black/[0.03] text-ink">
+      {/* Back to top button positioned right on the divider line, aligned with content */}
+      <div className="max-w-[1180px] mx-auto px-5 lg:px-8 relative">
+        <button
+          type="button"
+          onClick={scrollToTop}
+          aria-label={t('scrollToTop')}
+          title={t('scrollToTop')}
+          className="absolute end-5 lg:end-8 top-0 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-white/40 bg-black/25 backdrop-blur-xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.45),0_6px_20px_0_rgba(0,0,0,0.12)] flex items-center justify-center text-white transition-all duration-300 hover:bg-black/35 hover:border-white/60 hover:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.65),0_8px_24px_0_rgba(0,0,0,0.18)] active:scale-90"
+        >
+          <ArrowUp className="w-4 h-4 drop-shadow-xs" />
+        </button>
+      </div>
+
+      <div className="max-w-6xl mx-auto py-8 px-6 flex flex-col items-center">
         {/* Social Media Links */}
         <div className="flex justify-center gap-6 mb-6">
           {/* Instagram */}

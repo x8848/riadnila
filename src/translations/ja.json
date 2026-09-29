@@ -433,5 +433,6 @@
   "close": "閉じる",
   "previous": "前の写真",
   "next": "次の写真",
-  "digitalGuestAccess": "デジタルゲストアクセス"
+  "digitalGuestAccess": "デジタルゲストアクセス",
+  "scrollToTop": "トップへスクロール"
 }

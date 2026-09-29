@@ -433,5 +433,6 @@
   "close": "Sluiten",
   "previous": "Vorige foto",
   "next": "Volgende foto",
-  "digitalGuestAccess": "Digitale gastentoegang"
+  "digitalGuestAccess": "Digitale gastentoegang",
+  "scrollToTop": "Scroll naar boven"
 }
