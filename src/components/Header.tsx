@@ -37,8 +37,12 @@ export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
       </div>
 
       {/* Top Bar */}
-      <div className="relative z-50 w-full max-w-[1180px] mx-auto px-5 lg:px-8 pt-5 flex items-center justify-between">
-        {shouldShowBack ? (
+      <div
+        className={`relative z-50 w-full max-w-[1180px] mx-auto px-5 lg:px-8 pt-5 flex items-center ${
+          shouldShowBack ? 'justify-between' : 'justify-end'
+        }`}
+      >
+        {shouldShowBack && (
           <button
             type="button"
             onClick={handleBack}
@@ -48,12 +52,8 @@ export default function Header({ subtitle, showBack, heroImage }: HeaderProps) {
           >
             <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
           </button>
-        ) : (
-          <div className="w-11 h-11" />
         )}
-        <div className="ml-auto">
-          <LanguageToggle />
-        </div>
+        <LanguageToggle />
       </div>
 
       {/* Title Area - Centered with single white logo above title */}

@@ -36,7 +36,7 @@ export default function LanguageToggle() {
   }, [isOpen])
 
   return (
-    <div className="relative inline-block text-left" ref={containerRef}>
+    <div className="relative inline-block text-start" ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +50,10 @@ export default function LanguageToggle() {
 
       {isOpen && (
         <div
-          className="absolute end-0 mt-2 w-52 rounded-2xl shadow-2xl border py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto"
+          dir="ltr"
+          className={`absolute ${
+            language === 'ar' ? 'left-0' : 'right-0'
+          } mt-2 w-52 rounded-2xl shadow-2xl border py-2 z-50 max-h-[calc(100vh-120px)] overflow-y-auto pointer-events-auto`}
           style={{
             backgroundColor: '#f7f3ec',
             borderColor: 'rgba(179, 147, 104, 0.25)',
